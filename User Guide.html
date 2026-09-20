@@ -1374,99 +1374,153 @@
 
       <!-- Section 7.4: Local Narrative Insights Engine Deep Dive -->
       <div class="guide-sub-block reveal" id="narrative-insights-engine" style="margin-top:32px">
-        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:16px">
-          <div>
-            <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px">
-              <span class="guide-badge-pill badge-cyan">Deductive Engine</span>
-              <span class="guide-badge-pill badge-green">100% On-Device</span>
-              <span class="guide-badge-pill badge-purple">Zero Hallucinations</span>
+        <div class="nie-wrapper">
+          <!-- Header Area -->
+          <div class="nie-header-row">
+            <div>
+              <div class="nie-badges">
+                <span class="nie-pill nie-pill-cyan">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+                  On-Device Engine
+                </span>
+                <span class="nie-pill nie-pill-green">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                  100% Offline &amp; Private
+                </span>
+                <span class="nie-pill nie-pill-purple">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  Zero AI Hallucinations
+                </span>
+              </div>
+              <h3 style="font-size:clamp(20px, 2.2vw, 24px);font-weight:800;color:var(--fg);margin-top:4px">
+                7.4 Local Narrative Insights Engine
+              </h3>
             </div>
-            <h3 style="font-size:22px;font-weight:800;color:var(--fg)">7.4 Local Narrative Insights Engine</h3>
-          </div>
-          <span style="font-size:12.5px;color:var(--muted);font-weight:600">Built-in to Profit Analytics &amp; BI Views</span>
-        </div>
-
-        <div class="guide-explain" style="border-radius:12px;border-top:none;border:1px solid rgba(56,189,248,0.25);margin-bottom:20px">
-          <p class="ge-para">
-            Most retail POS and inventory platforms either overwhelm business owners with raw numerical grids and static charts, or compromise privacy by uploading sensitive financial records to cloud-based Large Language Models (LLMs).
-          </p>
-          <p class="ge-para">
-            <strong>The CM RetailOS Local Narrative Insights Engine</strong> is an on-device, deterministic analytics and natural-language deductive intelligence engine. It runs 100% locally on your computer, transforming raw checkout transactions, inventory buffers, and Cost of Goods Sold (COGS) into clear, actionable, executive-level summaries.
-          </p>
-
-          <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));gap:14px;margin:18px 0">
-            <div style="background:rgba(15,23,42,0.6);padding:14px;border-radius:8px;border:1px solid rgba(255,255,255,0.06)">
-              <div style="font-weight:700;color:#38bdf8;font-size:13.5px;margin-bottom:4px">🔒 100% Offline &amp; Private</div>
-              <div style="font-size:12.5px;color:#94a3b8">Zero external API calls, zero cloud transmission, and zero risk of proprietary sales leakage. Financial figures remain strictly on your local PC.</div>
-            </div>
-            <div style="background:rgba(15,23,42,0.6);padding:14px;border-radius:8px;border:1px solid rgba(255,255,255,0.06)">
-              <div style="font-weight:700;color:#4ade80;font-size:13.5px;margin-bottom:4px">⚡ Instant &amp; Free</div>
-              <div style="font-size:12.5px;color:#94a3b8">Instantaneous deductions with 0ms network latency. No OpenAI or Anthropic token charges and no recurring monthly SaaS subscriptions.</div>
-            </div>
-            <div style="background:rgba(15,23,42,0.6);padding:14px;border-radius:8px;border:1px solid rgba(255,255,255,0.06)">
-              <div style="font-weight:700;color:#c084fc;font-size:13.5px;margin-bottom:4px">🎯 Zero AI Hallucinations</div>
-              <div style="font-size:12.5px;color:#94a3b8">Grounded directly on deterministic mathematical aggregations and statistical co-occurrence over the local SQLite ledger.</div>
-            </div>
+            <span style="font-size:12.5px;color:var(--muted);font-weight:600;align-self:center">
+              Built-in to Profit Analytics &amp; Reports
+            </span>
           </div>
 
-          <div class="ge-head" style="margin-top:20px"><svg class="ge-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>The 3 Core Deductive Tags &amp; How to Act on Them</div>
+          <!-- Plain English Intro -->
+          <div class="nie-intro-text">
+            <p>
+              Most POS software buries store owners under complex spreadsheets and confusing graphs—or asks you to upload your private sales to third-party cloud AI bots.
+            </p>
+            <p>
+              <strong>CM RetailOS has an intelligent assistant built right into your PC.</strong> It quietly reads your checkout receipts, product wholesale costs, and shelf stock in real-time, then explains your store's performance in <em>simple, clear English sentences</em> so you know exactly what actions to take.
+            </p>
+          </div>
 
-          <div style="display:flex;flex-direction:column;gap:16px;margin-top:12px">
-            <!-- 1. Demand Pattern -->
-            <div style="background:rgba(8,14,26,0.8);border-left:4px solid #22d3ee;padding:14px 18px;border-radius:0 10px 10px 0">
-              <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
-                <span class="guide-badge-pill badge-cyan" style="font-size:11px">TAG: DEMAND PATTERN</span>
-                <strong style="color:#e2e8f0;font-size:14px">Peak Trading Window Analysis</strong>
-              </div>
-              <p style="font-size:13px;color:#94a3b8;margin-bottom:8px">
-                <strong>Mechanism:</strong> Bins all completed sales receipts across 9 diurnal trading windows (<code>7–9am</code>, <code>9–11am</code>, <code>11am–1pm</code>, <code>1–3pm</code>, <code>3–5pm</code>, <code>5–7pm</code>, <code>7–9pm</code>, <code>9–11pm</code>, and <code>11pm–7am</code>) to eliminate cashier shift guesswork.
-              </p>
-              <div style="background:rgba(6,182,212,0.08);border:1px solid rgba(6,182,212,0.25);border-radius:8px;padding:10px 14px;font-size:13px;color:#cbd5e1">
-                <span style="color:#22d3ee;font-weight:700">Example Synthesis:</span>
-                <em>“Your busiest window is 1–3pm. This is the strongest observed sales window for today. Consider aligning coverage and replenishment before it begins. (48 sales)”</em>
+          <!-- 3 Value Pillars -->
+          <div class="nie-benefits-grid">
+            <div class="nie-benefit-card">
+              <div class="nie-benefit-icon" style="background:rgba(14,165,233,0.12);color:#38bdf8">🔒</div>
+              <div class="nie-benefit-title">100% Private &amp; Offline</div>
+              <div class="nie-benefit-desc">
+                Your store revenue, profits, and supplier costs never leave your PC. It works with zero internet connection.
               </div>
             </div>
 
-            <!-- 2. Profit Driver & Margin Leak -->
-            <div style="background:rgba(8,14,26,0.8);border-left:4px solid #4ade80;padding:14px 18px;border-radius:0 10px 10px 0">
-              <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
-                <span class="guide-badge-pill badge-green" style="font-size:11px">TAG: PROFIT DRIVER</span>
-                <span class="guide-badge-pill badge-amber" style="font-size:11px">TAG: MARGIN TO REVIEW</span>
-                <strong style="color:#e2e8f0;font-size:14px">Margin Review &amp; Loss Leader Detection</strong>
+            <div class="nie-benefit-card">
+              <div class="nie-benefit-icon" style="background:rgba(34,197,94,0.12);color:#4ade80">⚡</div>
+              <div class="nie-benefit-title">Instant &amp; Free Forever</div>
+              <div class="nie-benefit-desc">
+                No monthly subscriptions, no OpenAI token charges, and 0ms delay. Insights update instantly as sales happen.
               </div>
-              <p style="font-size:13px;color:#94a3b8;margin-bottom:8px">
-                <strong>Mechanism:</strong> Intersects actual sold quantities with wholesale unit costs (COGS) and discount allowances to reveal true net profit per SKU. High sales volume often blinds retailers to products selling at a loss due to outdated supplier costs or excessive cashier discounting.
+            </div>
+
+            <div class="nie-benefit-card">
+              <div class="nie-benefit-icon" style="background:rgba(168,85,247,0.12);color:#c084fc">🎯</div>
+              <div class="nie-benefit-title">100% Mathematically Accurate</div>
+              <div class="nie-benefit-desc">
+                Unlike cloud chatbots that make things up, these insights are based strictly on real math and your store's receipts.
+              </div>
+            </div>
+          </div>
+
+          <!-- Practical Everyday Scenarios -->
+          <div class="nie-insights-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+            How the Insights Engine Helps Your Store Every Day
+          </div>
+
+          <div class="nie-scenarios">
+            <!-- Scenario 1: Peak Hours -->
+            <div class="nie-scenario-card card-blue">
+              <div class="nie-scenario-header">
+                <span class="nie-scenario-badge badge-blue-subtle">🕒 Rush Hour Detection</span>
+                <span class="nie-scenario-heading">Peak Trading Window Analysis</span>
+              </div>
+              <p class="nie-scenario-explanation">
+                <strong>How it works:</strong> The system automatically divides your business day into time slots (such as morning, lunch rush, or evening peak) to find when your shop gets the most customers. You can schedule staff and restock high-traffic shelves <em>before</em> checkout lines get long.
               </p>
-              <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:10px">
-                <div style="background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.25);border-radius:8px;padding:10px 14px;font-size:12.5px;color:#cbd5e1">
-                  <span style="color:#4ade80;font-weight:700">Scenario 1 (Profit Leader):</span><br>
-                  <em>“Cordless Drill 20V leads your profit mix. It is the highest-profit product for this week. Protect its availability and review its margin when pricing changes. (+UGX 840,000 profit)”</em>
+              <div class="nie-speech-bubble">
+                <div class="nie-speech-bubble-label label-blue">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                  What RetailOS Tells You:
                 </div>
-                <div style="background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.25);border-radius:8px;padding:10px 14px;font-size:12.5px;color:#cbd5e1">
-                  <span style="color:#f87171;font-weight:700">Scenario 2 (Silent Margin Leak):</span><br>
-                  <em>“Basmati Rice 5kg is losing margin. It is the top result for this week, but still below cost. Review its price, cost, or discounting before promoting it. (-UGX 125,000 loss)”</em>
+                <div class="nie-quote-text">
+                  “Your busiest window today is <strong>1:00 PM – 3:00 PM</strong> (48 sales recorded). Make sure all cashier counters are staffed and fast-selling goods are restocked before 1:00 PM.”
                 </div>
               </div>
             </div>
 
-            <!-- 3. Basket Affinity -->
-            <div style="background:rgba(8,14,26,0.8);border-left:4px solid #c084fc;padding:14px 18px;border-radius:0 10px 10px 0">
-              <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
-                <span class="guide-badge-pill badge-purple" style="font-size:11px">TAG: BASKET OPPORTUNITY</span>
-                <strong style="color:#e2e8f0;font-size:14px">Market Basket Affinity Analysis</strong>
+            <!-- Scenario 2: Profit & Margin Leak -->
+            <div class="nie-scenario-card card-green">
+              <div class="nie-scenario-header">
+                <span class="nie-scenario-badge badge-green-subtle">💰 Profit Protection</span>
+                <span class="nie-scenario-heading">Top Profit Earners &amp; Loss Warnings</span>
               </div>
-              <p style="font-size:13px;color:#94a3b8;margin-bottom:8px">
-                <strong>Mechanism:</strong> A statistical co-occurrence matrix evaluating multi-item basket combinations across completed transactions. It surfaces products frequently purchased together to guide cross-selling, promotional bundling, and shelf adjacencies.
+              <p class="nie-scenario-explanation">
+                <strong>How it works:</strong> RetailOS compares what items sell for against what you paid suppliers, including cashier discounts. It spotlights your real profit-makers and immediately catches items accidentally selling below cost.
               </p>
-              <div style="background:rgba(168,85,247,0.08);border:1px solid rgba(168,85,247,0.25);border-radius:8px;padding:10px 14px;font-size:13px;color:#cbd5e1">
-                <span style="color:#c084fc;font-weight:700">Example Synthesis:</span>
-                <em>“Basmati Rice 5kg and Sunflower Cooking Oil 2L move together. This pairing is a grounded opportunity for a bundle, nearby shelf placement, or checkout suggestion. (34 shared baskets)”</em>
+              <div class="nie-dual-scenarios">
+                <div class="nie-mini-scenario mini-profit">
+                  <div class="nie-speech-bubble-label label-green">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    Top Profit Leader
+                  </div>
+                  <div class="nie-quote-text">
+                    “<strong>Cordless Drill 20V</strong> is your #1 profit maker this week (<strong>+UGX 840,000 net profit</strong>). Keep plenty on display and maintain its margin.”
+                  </div>
+                </div>
+
+                <div class="nie-mini-scenario mini-leak">
+                  <div class="nie-speech-bubble-label label-red">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    Silent Margin Leak Alert
+                  </div>
+                  <div class="nie-quote-text">
+                    “<strong>Basmati Rice 5kg</strong> is selling fast, but you lost <strong>UGX 125,000</strong> due to higher supplier costs. Adjust your shelf price or reduce cashier discounts.”
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Scenario 3: Basket Combos -->
+            <div class="nie-scenario-card card-purple">
+              <div class="nie-scenario-header">
+                <span class="nie-scenario-badge badge-purple-subtle">🛒 Smart Combos</span>
+                <span class="nie-scenario-heading">Frequently Bought Together (Cross-Selling)</span>
+              </div>
+              <p class="nie-scenario-explanation">
+                <strong>How it works:</strong> The engine automatically tracks which items shoppers buy together in the same cart. You can bundle them for special promotions, place them beside each other on shelves, or train cashiers to suggest them during checkout.
+              </p>
+              <div class="nie-speech-bubble">
+                <div class="nie-speech-bubble-label label-purple">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                  What RetailOS Tells You:
+                </div>
+                <div class="nie-quote-text">
+                  “<strong>Basmati Rice 5kg</strong> and <strong>Sunflower Cooking Oil 2L</strong> are frequently bought together (34 shared carts). Create a bundled discount deal or place them side-by-side on your shelves.”
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="ge-tip" style="margin-top:18px">
-            💡 <strong>Executive Dossier Export (.cmp):</strong> When management exports shift or period audits from CM RetailOS, narrative directives are compiled and encrypted with military-grade AES-256 (<code>.cmp</code> format). These confidential executive files can be opened and verified exclusively with the standalone <strong>CM SheetViewer</strong> application.
+          <!-- Encrypted Export Tip -->
+          <div class="nie-footer-tip">
+            🔒 <strong>Encrypted Management Audits (.cmp):</strong> When store owners or managers export shift or monthly audit reports, RetailOS secures all narrative directives with bank-grade AES-256 encryption into compact <code>.cmp</code> files. These confidential files can only be decrypted and reviewed on authorized computers using the standalone <strong>CM SheetViewer</strong> application.
           </div>
         </div>
       </div>

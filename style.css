@@ -5581,6 +5581,399 @@ html.js .reveal.in {
   line-height: 1.5;
 }
 
+/* ============ LOCAL NARRATIVE INSIGHTS (USER GUIDE SECTION 7.4) ============ */
+.nie-wrapper {
+  border-radius: 16px;
+  border: 1px solid rgba(56, 189, 248, 0.22);
+  background: hsl(220 45% 8% / 0.85);
+  padding: 24px 26px;
+  margin-top: 14px;
+}
+
+[data-theme="light"] .nie-wrapper {
+  background: #ffffff;
+  border-color: rgba(14, 165, 233, 0.28);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.nie-header-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.nie-badges {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.nie-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.nie-pill-cyan {
+  background: rgba(6, 182, 212, 0.12);
+  color: #22d3ee;
+  border: 1px solid rgba(6, 182, 212, 0.3);
+}
+
+.nie-pill-green {
+  background: rgba(34, 197, 94, 0.12);
+  color: #4ade80;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.nie-pill-purple {
+  background: rgba(168, 85, 247, 0.12);
+  color: #c084fc;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+[data-theme="light"] .nie-pill-cyan {
+  background: rgba(6, 182, 212, 0.1);
+  color: #0891b2;
+  border-color: rgba(6, 182, 212, 0.3);
+}
+
+[data-theme="light"] .nie-pill-green {
+  background: rgba(34, 197, 94, 0.1);
+  color: #16a34a;
+  border-color: rgba(34, 197, 94, 0.3);
+}
+
+[data-theme="light"] .nie-pill-purple {
+  background: rgba(168, 85, 247, 0.1);
+  color: #9333ea;
+  border-color: rgba(168, 85, 247, 0.3);
+}
+
+.nie-intro-text {
+  font-size: 14.5px;
+  line-height: 1.68;
+  color: var(--fg);
+  margin-bottom: 22px;
+}
+
+.nie-intro-text p {
+  margin-bottom: 10px;
+  color: var(--muted);
+}
+
+.nie-intro-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* 3 Top Benefits */
+.nie-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin: 18px 0 26px;
+}
+
+.nie-benefit-card {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  padding: 16px;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+[data-theme="light"] .nie-benefit-card {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+}
+
+.nie-benefit-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.nie-benefit-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--fg);
+  margin-bottom: 5px;
+}
+
+.nie-benefit-desc {
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+/* Section Title for the 3 Insights */
+.nie-insights-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15.5px;
+  font-weight: 700;
+  color: var(--fg);
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+/* 3 Main Scenario Cards */
+.nie-scenarios {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.nie-scenario-card {
+  background: rgba(15, 23, 42, 0.5);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 18px 20px;
+  transition: border-color 0.2s ease;
+}
+
+[data-theme="light"] .nie-scenario-card {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+}
+
+.nie-scenario-card.card-blue {
+  border-left: 4px solid #0ea5e9;
+}
+
+.nie-scenario-card.card-green {
+  border-left: 4px solid #10b981;
+}
+
+.nie-scenario-card.card-purple {
+  border-left: 4px solid #8b5cf6;
+}
+
+.nie-scenario-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.nie-scenario-badge {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 6px;
+  letter-spacing: 0.4px;
+}
+
+.badge-blue-subtle {
+  background: rgba(14, 165, 233, 0.15);
+  color: #38bdf8;
+}
+
+.badge-green-subtle {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+}
+
+.badge-amber-subtle {
+  background: rgba(245, 158, 11, 0.15);
+  color: #fbbf24;
+}
+
+.badge-purple-subtle {
+  background: rgba(139, 92, 246, 0.15);
+  color: #a78bfa;
+}
+
+[data-theme="light"] .badge-blue-subtle {
+  background: rgba(14, 165, 233, 0.12);
+  color: #0284c7;
+}
+
+[data-theme="light"] .badge-green-subtle {
+  background: rgba(16, 185, 129, 0.12);
+  color: #059669;
+}
+
+[data-theme="light"] .badge-amber-subtle {
+  background: rgba(245, 158, 11, 0.12);
+  color: #d97706;
+}
+
+[data-theme="light"] .badge-purple-subtle {
+  background: rgba(139, 92, 246, 0.12);
+  color: #7c3aed;
+}
+
+.nie-scenario-heading {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--fg);
+}
+
+.nie-scenario-explanation {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+/* Speech/Output Bubble */
+.nie-speech-bubble {
+  background: rgba(8, 14, 26, 0.65);
+  border-radius: 10px;
+  padding: 12px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--fg);
+}
+
+[data-theme="light"] .nie-speech-bubble {
+  background: #ffffff;
+  border-color: #cbd5e1;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.nie-speech-bubble-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.label-blue { color: #38bdf8; }
+.label-green { color: #34d399; }
+.label-amber { color: #fbbf24; }
+.label-red { color: #f87171; }
+.label-purple { color: #c084fc; }
+
+[data-theme="light"] .label-blue { color: #0284c7; }
+[data-theme="light"] .label-green { color: #059669; }
+[data-theme="light"] .label-amber { color: #d97706; }
+[data-theme="light"] .label-red { color: #dc2626; }
+[data-theme="light"] .label-purple { color: #7c3aed; }
+
+.nie-quote-text {
+  font-style: italic;
+  color: var(--fg);
+}
+
+/* Two-column scenario for profit vs leak */
+.nie-dual-scenarios {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.nie-mini-scenario {
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.mini-profit {
+  background: rgba(34, 197, 94, 0.08);
+  border: 1px solid rgba(34, 197, 94, 0.25);
+}
+
+.mini-leak {
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+}
+
+[data-theme="light"] .mini-profit {
+  background: rgba(34, 197, 94, 0.06);
+  border-color: rgba(34, 197, 94, 0.35);
+}
+
+[data-theme="light"] .mini-leak {
+  background: rgba(239, 68, 68, 0.06);
+  border-color: rgba(239, 68, 68, 0.35);
+}
+
+/* Footer callout tip */
+.nie-footer-tip {
+  margin-top: 18px;
+  padding: 14px 18px;
+  border-radius: 10px;
+  background: rgba(14, 165, 233, 0.07);
+  border: 1px solid rgba(14, 165, 233, 0.25);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+[data-theme="light"] .nie-footer-tip {
+  background: rgba(14, 165, 233, 0.06);
+  border-color: rgba(14, 165, 233, 0.3);
+  color: #334155;
+}
+
+/* Responsive adjustments for Mobile */
+@media (max-width: 860px) {
+  .nie-wrapper {
+    padding: 18px 16px;
+  }
+
+  .nie-benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .nie-dual-scenarios {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nie-wrapper {
+    padding: 14px 12px;
+    border-radius: 12px;
+  }
+
+  .nie-scenario-card {
+    padding: 14px 12px;
+  }
+
+  .nie-intro-text {
+    font-size: 13.5px;
+  }
+
+  .nie-scenario-explanation {
+    font-size: 13px;
+  }
+
+  .nie-speech-bubble {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+}
+
 /* ============ PRINT / OFFLINE MANUAL EXPORT ============ */
 @media print {
 
