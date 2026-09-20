@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-  <script>document.documentElement.classList.add('js')</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About CM RetailOS | Built in Africa for Modern Business</title>
@@ -28,6 +27,20 @@
   <meta name="twitter:description"
     content="Built in Africa. Designed for modern business. Discover the story and architecture behind CM RetailOS.">
   <meta name="twitter:image" content="https://cmretailos.vercel.app/brand-logo.png">
+
+  <style>
+    /* Guarantee instant visibility across all sections on About page */
+    html.js .reveal,
+    .reveal,
+    .about-hero,
+    .about-hero *,
+    .section,
+    .section * {
+      opacity: 1 !important;
+      visibility: visible !important;
+      transform: none !important;
+    }
+  </style>
 
   <!-- Structured Data JSON-LD -->
   <script type="application/ld+json">
@@ -137,8 +150,7 @@
   <!-- ================= HERO ================= -->
   <section class="about-hero">
     <div class="container">
-      <div style="display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border-radius:20px;background:hsl(199 89% 48% / .12);border:1px solid hsl(199 89% 48% / .32);color:var(--primary-light);font-size:13px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;margin-bottom:14px"
-        class="reveal">
+      <div style="display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border-radius:20px;background:hsl(199 89% 48% / .12);border:1px solid hsl(199 89% 48% / .32);color:var(--primary-light);font-size:13px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;margin-bottom:14px">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
           <circle cx="12" cy="12" r="10" />
           <polyline points="12 6 12 12 16 14" />
@@ -146,16 +158,16 @@
         CM RetailOS v3.0 • Developed &amp; Powered by CM Studios UG
       </div>
 
-      <h1 class="reveal" style="font-size:clamp(34px, 4.8vw, 54px);line-height:1.15;letter-spacing:-.02em;font-weight:800">
+      <h1 style="font-size:clamp(34px, 4.8vw, 54px);line-height:1.15;letter-spacing:-.02em;font-weight:800;color:var(--fg);margin-top:10px">
         Built in Africa. Designed for <span class="grad-text">Modern Business.</span>
       </h1>
 
-      <p class="lead reveal" style="max-width:780px;margin:18px auto 0;color:var(--muted);font-size:clamp(16px, 1.8vw, 19px);line-height:1.65">
+      <p class="lead" style="max-width:780px;margin:18px auto 0;color:var(--muted);font-size:clamp(16px, 1.8vw, 19px);line-height:1.65">
         Engineered from the ground up in Kampala, Uganda by <strong>CM Studios UG</strong>. CM RetailOS is a native, 100% offline desktop Operating System built to give African retailers, supermarkets, pharmacies, and wholesale depots enterprise-grade checkout velocity, rock-solid stock control, and deterministic profit intelligence.
       </p>
 
       <!-- Quick Badges -->
-      <div class="setup-badges reveal" style="margin-top:28px">
+      <div class="setup-badges" style="margin-top:28px">
         <span class="setup-badge">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
             <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
@@ -186,7 +198,7 @@
         </span>
       </div>
 
-      <div class="reveal" style="display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:32px">
+      <div style="display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:32px">
         <a class="btn btn-primary btn-lg" href="download.html" style="box-shadow:0 8px 24px -6px hsl(199 89% 48% / .5)">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="18" height="18">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
