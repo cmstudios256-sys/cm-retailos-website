@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>document.documentElement.classList.add('js')</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download CM RetailOS Suite v3.0 | 100% Offline Retail POS &amp; Management</title>
+    <meta name="description"
+        content="Download official offline installer for CM RetailOS Suite v3.0 and CM SheetViewer. 100% offline retail POS, barcode checkout, inventory management, and audit tools for Windows.">
+    <link rel="icon" type="image/png" href="brand-logo.png">
+    <link rel="apple-touch-icon" href="brand-logo.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="theme.js" defer></script>
+    <style>
+        /* Custom enhancements for download page */
+        .dl-cards-grid {
+            display: grid;
+            grid-template-columns: 1.25fr 1fr;
+            gap: 28px;
+            margin: 40px auto 0;
+            max-width: 1040px;
+        }
+
+        .dl-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 36px 32px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+        }
+
+        .dl-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.4);
+        }
+
+        .dl-card.featured {
+            border-color: rgba(56, 189, 248, 0.45);
+            background: linear-gradient(180deg, hsl(217 38% 13%) 0%, hsl(217 38% 10%) 100%);
+            box-shadow: 0 0 50px -15px hsl(199 89% 48% / .22);
+        }
+
+        [data-theme="light"] .dl-card.featured {
+            background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+            border-color: rgba(6, 182, 212, 0.4);
+            box-shadow: 0 16px 36px -10px rgba(6, 182, 212, 0.18);
+        }
+
+        .dl-ribbon {
+            position: absolute;
+            top: -12px;
+            right: 28px;
+            background: linear-gradient(135deg, hsl(199 89% 48%), hsl(203 94% 38%));
+            color: #fff;
+            font-size: 11px;
+            font-weight: 750;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            padding: 5px 14px;
+            border-radius: 999px;
+            box-shadow: 0 4px 12px hsl(199 89% 48% / .4);
+        }
+
+        .dl-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 18px;
+            margin-bottom: 22px;
+        }
+
+        .dl-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            background: hsl(199 89% 48% / .14);
+            border: 1px solid hsl(199 89% 48% / .3);
+            display: grid;
+            place-items: center;
+            flex-shrink: 0;
+            padding: 7px;
+            overflow: hidden;
+        }
+
+        .dl-icon-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        .dl-icon.dl-icon-clean {
+            background: transparent;
+            border: none;
+            padding: 0;
+        }
+
+        .dl-icon.dl-icon-clean .dl-icon-img {
+            border-radius: 14px;
+            box-shadow: 0 4px 14px rgba(16, 185, 129, 0.22);
+        }
+
+        .dl-title-group h3 {
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 1.25;
+            color: var(--fg);
+        }
+
+        .dl-filename {
+            display: inline-block;
+            font-family: var(--mono);
+            font-size: 12.5px;
+            color: var(--primary-light);
+            margin-top: 4px;
+            word-break: break-all;
+        }
+
+        .dl-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            padding: 14px 0;
+            border-top: 1px solid var(--border-soft);
+            border-bottom: 1px solid var(--border-soft);
+            margin: 16px 0 22px;
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        .dl-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .dl-meta-item strong {
+            color: var(--fg);
+            font-weight: 600;
+        }
+
+        .dl-checklist {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .dl-checklist li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 14px;
+            color: var(--fg);
+            line-height: 1.45;
+        }
+
+        .dl-checklist li svg {
+            width: 17px;
+            height: 17px;
+            stroke: #22c55e;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .dl-action-area {
+            margin-top: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .dl-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 15.5px;
+            font-weight: 650;
+            padding: 15px 24px;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: all .2s ease;
+            cursor: pointer;
+        }
+
+        .dl-btn-primary {
+            background: linear-gradient(135deg, hsl(199 89% 48%), hsl(203 94% 38%));
+            color: #fff;
+            box-shadow: 0 8px 24px -6px hsl(199 89% 48% / .45);
+            border: 1px solid hsl(199 89% 60% / .3);
+        }
+
+        .dl-btn-primary:hover {
+            background: linear-gradient(135deg, hsl(199 92% 52%), hsl(203 96% 42%));
+            box-shadow: 0 12px 28px -4px hsl(199 89% 48% / .55);
+            transform: translateY(-2px);
+        }
+
+        .dl-btn-secondary {
+            background: hsl(217 38% 15%);
+            color: var(--fg);
+            border: 1px solid var(--border);
+        }
+
+        [data-theme="light"] .dl-btn-secondary {
+            background: #f1f5f9;
+            color: #0f172a;
+            border-color: #cbd5e1;
+        }
+
+        .dl-btn-secondary:hover {
+            border-color: var(--primary-light);
+            background: hsl(217 38% 18%);
+            transform: translateY(-2px);
+        }
+
+        [data-theme="light"] .dl-btn-secondary:hover {
+            background: #e2e8f0;
+        }
+
+        .dl-foot-note {
+            font-size: 12px;
+            color: var(--faint);
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .quick-steps-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+            margin-top: 36px;
+        }
+
+        .quick-step-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 26px;
+            position: relative;
+        }
+
+        .quick-step-num {
+            width: 34px;
+            height: 34px;
+            border-radius: 9px;
+            background: hsl(199 89% 48% / .14);
+            color: var(--primary-light);
+            border: 1px solid hsl(199 89% 48% / .3);
+            display: grid;
+            place-items: center;
+            font-weight: 700;
+            font-size: 14px;
+            margin-bottom: 16px;
+            font-family: var(--mono);
+        }
+
+        .quick-step-card h4 {
+            font-size: 17px;
+            font-weight: 650;
+            margin-bottom: 8px;
+            color: var(--fg);
+        }
+
+        .quick-step-card p {
+            font-size: 13.5px;
+            color: var(--muted);
+            line-height: 1.5;
+            margin-bottom: 14px;
+        }
+
+        .quick-step-card a {
+            color: var(--primary-light);
+            font-size: 13px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .quick-step-card a:hover {
+            text-decoration: underline;
+        }
+
+        .offline-shield-box {
+            background: linear-gradient(135deg, hsl(217 38% 12%), hsl(220 50% 8%));
+            border: 1px solid rgba(56, 189, 248, 0.25);
+            border-radius: 20px;
+            padding: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 32px;
+            margin-top: 50px;
+        }
+
+        [data-theme="light"] .offline-shield-box {
+            background: linear-gradient(135deg, #ffffff, #f0fdf4);
+            border-color: #bbf7d0;
+        }
+
+        @media (max-width: 960px) {
+            .dl-cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .quick-steps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .offline-shield-box {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ================= NAV ================= -->
+    <header id="top">
+        <div class="container nav">
+            <a class="logo" href="index.html#top">
+                <img src="brand-logo.webp" alt="CM RetailOS" class="logo-img">
+                CM RetailOS
+            </a>
+            <nav class="nav-links">
+                <a href="index.html#features-section">Showcase</a>
+                <a href="index.html#how-it-works">How It Works</a>
+                <a href="How to Setup.html">How to Setup</a>
+                <a href="User Guide.html">User Guide</a>
+                <a href="download.html" class="active">Download</a>
+                <a href="index.html#faq">FAQ</a>
+            </nav>
+            <div class="nav-cta">
+                <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light/dark theme"
+                    title="Switch between dark and light mode">
+                    <svg class="theme-icon sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="theme-icon moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <a class="btn btn-primary" href="cm-retail-os-installer.exe"
+                    download="cm-retail-os-installer.exe">Download Installer</a>
+                <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+        <nav class="mobile-menu" id="mobileMenu">
+            <a href="index.html#features-section">Showcase</a>
+            <a href="index.html#how-it-works">How It Works</a>
+            <a href="How to Setup.html">How to Setup</a>
+            <a href="User Guide.html">User Guide</a>
+            <a href="download.html" class="active">Download</a>
+            <a href="index.html#faq">FAQ</a>
+            <div class="mobile-theme-row">
+                <span>Appearance</span>
+                <button class="theme-toggle mobile-theme-btn" type="button" aria-label="Toggle light/dark theme">
+                    <svg class="theme-icon sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="theme-icon moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <span class="theme-mode-label"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ================= DOWNLOAD HERO ================= -->
+    <section class="download-hero">
+        <div class="container">
+            <h1 class="reveal"
+                style="font-size:clamp(34px, 4.8vw, 54px);line-height:1.15;letter-spacing:-.02em;margin-top:16px;">
+                Download <span class="grad-text">CM RetailOS Suite v3.0</span>
+            </h1>
+            <p class="reveal"
+                style="max-width:760px;margin:16px auto 0;color:var(--muted);font-size:clamp(16px, 1.8vw, 19px);line-height:1.6;">
+                The enterprise-grade 100% offline desktop Operating System for retail shops, supermarkets, pharmacies,
+                and wholesale depots. Install once, configure your registers, and run with zero internet required
+                forever.
+            </p>
+
+            <div class="setup-badges reveal">
+                <span class="setup-badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect width="20" height="14" x="2" y="3" rx="2" />
+                        <line x1="8" x2="16" y1="21" y2="21" />
+                        <line x1="12" y1="12" x2="12" y2="17" />
+                    </svg>
+                    Windows 11 / 10 / 8.1 / 7 SP1 (64-Bit)
+                </span>
+                <span class="setup-badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                    </svg>
+                    100% Offline (0ms Local Latency)
+                </span>
+                <span class="setup-badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 6 2 18 2 18 9" />
+                        <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
+                        <rect width="12" height="8" x="6" y="14" />
+                    </svg>
+                    ESC/POS 58mm &amp; 80mm Printers
+                </span>
+                <span class="setup-badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                    </svg>
+                    Air-Gapped Hardware Licensing
+                </span>
+            </div>
+
+            <!-- ================= DOWNLOAD CARDS ================= -->
+            <div class="dl-cards-grid reveal">
+                <!-- CARD 1: PRIMARY SUITE -->
+                <div class="dl-card featured">
+                    <div>
+                        <div class="dl-header">
+                            <div class="dl-icon">
+                                <img src="brand-logo.webp" alt="CM RetailOS Logo" class="dl-icon-img">
+                            </div>
+                            <div class="dl-title-group" style="text-align:left">
+                                <h3>CM RetailOS Core Suite v3.0</h3>
+                                <span class="dl-filename">cm-retail-os-installer.exe</span>
+                            </div>
+                        </div>
+
+                        <div class="dl-meta">
+                            <div class="dl-meta-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15"
+                                    height="15">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                    <polyline points="7 10 12 15 17 10" />
+                                    <line x1="12" y1="15" x2="12" y2="3" />
+                                </svg>
+                                Size: <strong>39.5 MB</strong>
+                            </div>
+                            <div class="dl-meta-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15"
+                                    height="15">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <polyline points="12 6 12 12 16 14" />
+                                </svg>
+                                Build: <strong>v3.0.0 Stable</strong>
+                            </div>
+                            <div class="dl-meta-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15"
+                                    height="15">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                                    <line x1="16" y1="2" x2="16" y2="6" />
+                                    <line x1="8" y1="2" x2="8" y2="6" />
+                                    <line x1="3" y1="10" x2="21" y2="10" />
+                                </svg>
+                                OS: <strong>Windows (64-bit)</strong>
+                            </div>
+                        </div>
+
+                        <ul class="dl-checklist" style="text-align:left">
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                                Complete POS checkout lane with instant barcode scanning &amp; quick-keys
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                                Live gross margin and true net profit intelligence on every item sold
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                                Multi-tier staff access control (Admin, Manager, Locked Cashier)
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                                Plug-and-play with 58mm/80mm thermal receipt printers
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                                100% offline encrypted database with zero cloud latency or sync delay
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="dl-action-area">
+                        <a class="dl-btn dl-btn-primary" href="cm-retail-os-installer.exe"
+                            download="cm-retail-os-installer.exe" id="dlBtnMain">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="20"
+                                height="20">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                <polyline points="7 10 12 15 17 10" />
+                                <line x1="12" y1="15" x2="12" y2="3" />
+                            </svg>
+                            Download CM RetailOS (.exe)
+                        </a>
+                        <span class="dl-foot-note">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13"
+                                height="13">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                            </svg>
+                            Direct Windows Setup • Verified Virus-Free • 100% Air-Gapped
+                        </span>
+                    </div>
+                </div>
+
+                <!-- CARD 2: COMPANION SHEETVIEWER -->
+                <div class="dl-card">
+                    <div>
+                        <div class="dl-header">
+                            <div class="dl-icon dl-icon-clean">
+                                <img src="cmsheetviewer.webp" alt="CM SheetViewer Logo" class="dl-icon-img">
+                            </div>
+                            <div class="dl-title-group" style="text-align:left">
+                                <h3>CM SheetViewer Auditor</h3>
+                                <span class="dl-filename">CM-SheetViewer-Setup-1.0.0.exe</span>
+                            </div>
+                        </div>
+
+                        <div class="dl-meta">
+                            <div class="dl-meta-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15"
+                                    height="15">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                    <polyline points="7 10 12 15 17 10" />
+                                    <line x1="12" y1="15" x2="12" y2="3" />
+                                </svg>
+                                Size: <strong>8.3 MB</strong>
+                            </div>
+                            <div class="dl-meta-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15"
+                                    height="15">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <polyline points="12 6 12 12 16 14" />
+                                </svg>
+                                Build: <strong>v1.0.0 Stable</strong>
+                            </div>
+                            <div class="dl-meta-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15"
+                                    height="15">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                                    <line x1="16" y1="2" x2="16" y2="6" />
+                                    <line x1="8" y1="2" x2="8" y2="6" />
+                                    <line x1="3" y1="10" x2="21" y2="10" />
+                                </svg>
+                                OS: <strong>Windows (64/32)</strong>
+                            </div>
+                        </div>
+
+                        <ul class="dl-checklist" style="text-align:left">
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                                Standalone spreadsheet auditor for daily sales and shift reports
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                                Reads Excel (.xlsx, .xls) and CSV sheets with lightning speed
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                                Zero Microsoft Office or 365 license subscription needed
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                                Search, filter, and audit cashier transactions in seconds
+                            </li>
+                        </ul>
+
+                        <div style="background:rgba(14,165,233,0.07);border:1px solid rgba(14,165,233,0.25);border-radius:10px;padding:12px 14px;margin:16px 0 6px;text-align:left;font-size:13px;line-height:1.55">
+                            <div style="font-weight:700;color:var(--primary-light);margin-bottom:4px;display:flex;align-items:center;gap:6px">
+                                🔒 CM RetailOS Exclusive Monthly Reports
+                            </div>
+                            <span style="color:var(--muted)"><strong>.CMP</strong> and <strong>.CMXL</strong> are encrypted proprietary formats <strong>exported automatically</strong> by CM RetailOS for monthly business reports. Only the <strong>Admin</strong> can open and audit them in CM SheetViewer using administrator credentials.</span>
+                        </div>
+                    </div>
+
+                    <div class="dl-action-area">
+                        <a class="dl-btn dl-btn-secondary" href="CM-SheetViewer-Setup-1.0.0.exe"
+                            download="CM-SheetViewer-Setup-1.0.0.exe" id="dlBtnViewer">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="20"
+                                height="20">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                <polyline points="7 10 12 15 17 10" />
+                                <line x1="12" y1="15" x2="12" y2="3" />
+                            </svg>
+                            Download SheetViewer (.exe)
+                        </a>
+                        <span class="dl-foot-note">
+                            Lightweight auditor utility for back-office and management
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= EASY INSTALLATION STEPS ================= -->
+    <section class="section" style="padding:60px 0;border-top:1px solid var(--border-soft)">
+        <div class="container">
+            <div style="text-align:center;max-width:700px;margin:0 auto 30px">
+                <h2 class="title reveal" style="font-size:32px">Easy Steps to <span class="grad-text">Launch
+                        Offline</span></h2>
+                <p class="sub reveal">CM RetailOS is packaged with a single click-and-run setup wizard. No database
+                    servers or cloud accounts required.</p>
+            </div>
+
+            <div class="quick-steps-grid">
+                <div class="quick-step-card reveal">
+                    <div class="quick-step-num">01</div>
+                    <h4>Run the Installer</h4>
+                    <p>Double-click <code>cm-retail-os-installer.exe</code>. Choose your destination directory and check
+                        all options, including <em>"Create Desktop Shortcuts"</em>.
+                    </p>
+                    <a href="How to Setup.html#setup-steps">
+                        Setup Step 1 Details
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14"
+                            height="14">
+                            <polyline points="9 18 15 12 9 6" />
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="quick-step-card reveal">
+                    <div class="quick-step-num">02</div>
+                    <h4>Plug In Hardware</h4>
+                    <p>Plug in your USB receipt printer and barcode scanner. CM RetailOS auto-detects ESC/POS
+                        thermal printers instantly.</p>
+                    <a href="How to Setup.html#step-2">
+                        Printer &amp; Scanner Guide
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14"
+                            height="14">
+                            <polyline points="9 18 15 12 9 6" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Offline Security Banner -->
+            <div class="offline-shield-box reveal">
+                <div style="display:flex;align-items:center;gap:20px;text-align:left">
+                    <div
+                        style="width:52px;height:52px;border-radius:12px;background:hsl(142 71% 45% / .15);border:1px solid hsl(142 71% 45% / .3);display:grid;place-items:center;flex-shrink:0">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" width="28" height="28">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 style="font-size:20px;font-weight:700;color:var(--fg);margin-bottom:4px">100% Air-Gapped
+                            Data Privacy</h3>
+                        <p style="color:var(--muted);font-size:14px;line-height:1.5;margin:0">
+                            Your sales, customer contacts, purchase costs, and profits never touch the internet or
+                            public cloud servers. All ledgers remain encrypted on your physical hard drive.
+                        </p>
+                    </div>
+                </div>
+                <div style="flex-shrink:0">
+                    <a class="btn btn-outline" href="How to Setup.html" style="font-size:14px;padding:10px 20px">View
+                        Complete Setup Guide</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= SYSTEM REQUIREMENTS ================= -->
+    <section class="section"
+        style="padding:60px 0;background:hsl(220 50% 5%);border-top:1px solid var(--border-soft);border-bottom:1px solid var(--border-soft)">
+        <div class="container">
+            <div style="text-align:center;max-width:680px;margin:0 auto 36px">
+                <h2 class="title reveal" style="font-size:32px">System &amp; Hardware <span
+                        class="grad-text">Requirements</span></h2>
+                <p class="sub reveal">Engineered for lightweight desktop performance. CM RetailOS runs smoothly on
+                    affordable counter PCs.</p>
+            </div>
+
+            <div class="req-grid">
+                <div class="req-card reveal">
+                    <div class="req-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect width="20" height="14" x="2" y="3" rx="2" />
+                            <line x1="8" x2="16" y1="21" y2="21" />
+                            <line x1="12" y1="12" x2="12" y2="17" />
+                        </svg>
+                    </div>
+                    <h4>Operating System</h4>
+                    <p>Windows 11, Windows 10, Windows 8.1, or Windows 7 SP1 (64-bit architecture supported).</p>
+                </div>
+
+                <div class="req-card reveal">
+                    <div class="req-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect width="18" height="18" x="3" y="3" rx="2" />
+                            <path d="M9 3v18M15 3v18M3 9h18M3 15h18" />
+                        </svg>
+                    </div>
+                    <h4>Processor &amp; Memory</h4>
+                    <p>Dual-Core 2.0 GHz or higher. Minimum 4GB RAM (8GB recommended for stores with 100k+ SKUs).</p>
+                </div>
+
+                <div class="req-card reveal">
+                    <div class="req-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 6 2 18 2 18 9" />
+                            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
+                            <rect width="12" height="8" x="6" y="14" />
+                        </svg>
+                    </div>
+                    <h4>Thermal Receipt Printers</h4>
+                    <p>All standard 58mm &amp; 80mm ESC/POS thermal printers via USB, LAN/Ethernet, or Virtual COM port.
+                    </p>
+                </div>
+
+                <div class="req-card reveal">
+                    <div class="req-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 7V5a2 2 0 0 1 2-2h2" />
+                            <path d="M17 3h2a2 2 0 0 1 2 2v2" />
+                            <path d="M21 17v2a2 2 0 0 1-2 2h-2" />
+                            <path d="M7 21H5a2 2 0 0 1-2-2v-2" />
+                            <path d="M7 12h10" />
+                        </svg>
+                    </div>
+                    <h4>Barcode Readers</h4>
+                    <p>Plug-and-play USB laser/CCD barcode scanners, wireless Bluetooth wands, or built-in Android USB
+                        camera bridge.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= DOWNLOAD FAQ ================= -->
+    <section class="section" id="faq">
+        <div class="container">
+            <div style="text-align:center;max-width:650px;margin:0 auto 40px">
+                <h2 class="title reveal" style="font-size:32px">Download &amp; Installation <span
+                        class="grad-text">Answers</span></h2>
+            </div>
+
+            <div class="faq-accordion" style="max-width:820px;margin:0 auto">
+                <details class="faq-item reveal">
+                    <summary>Does CM RetailOS require an internet connection during setup or daily use? <span
+                            class="plus">+</span></summary>
+                    <div class="answer">No. CM RetailOS is 100% offline-first. Installation is performed directly from
+                        the local installer package without connecting to any cloud server. Once installed, daily
+                        checkout, barcode scanning, shift reconciliations, and profit calculations run with 0ms local
+                        response even in basements or remote areas with zero network.</div>
+                </details>
+
+                <details class="faq-item reveal">
+                    <summary>What is the difference between CM RetailOS and CM SheetViewer? <span class="plus">+</span>
+                    </summary>
+                    <div class="answer">
+                        <p style="margin-bottom:10px"><strong>CM RetailOS</strong> is the full retail operating system (POS, stock ledger, barcode scanner, profit tracking, cashier shift drawer management). <strong>CM SheetViewer</strong> is a dedicated standalone spreadsheet reader designed for shop owners and auditors to examine exported Excel reports (.xlsx/.xls/csv) without requiring a paid Microsoft Office license.</p>
+                        <div style="background:rgba(14,165,233,0.07);border:1px solid rgba(14,165,233,0.25);border-radius:10px;padding:10px 14px;font-size:13px;line-height:1.55">
+                            <strong style="color:var(--primary-light)">🔒 CM RetailOS Exclusive Monthly Reports:</strong> <span style="color:var(--muted)"><strong>.CMP</strong> and <strong>.CMXL</strong> files are <strong>exported automatically</strong> by CM RetailOS and strictly require <strong>Admin credentials</strong> to decrypt and open in CM SheetViewer.</span>
+                        </div>
+                    </div>
+                </details>
+
+
+                <details class="faq-item reveal">
+                    <summary>How does air-gapped licensing and activation work? <span class="plus">+</span></summary>
+                    <div class="answer">CM RetailOS uses a secure cryptographic license file tied to your computer's
+                        unique hardware Device ID. You do not need to register an online account. Your license key
+                        unlocks full permanent offline access directly on your counter machine.</div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer id="blog">
+        <div class="container">
+            <div class="foot-grid">
+                <div class="foot-brand">
+                    <a class="logo" href="index.html#top">
+                        <img src="brand-logo.webp" alt="CM RetailOS" class="logo-img">
+                        CM RetailOS
+                    </a>
+                    <p class="foot-desc">Enterprise-grade 100% offline desktop Operating System built to streamline
+                        checkout, protect stock, and track profits for retail shops across Africa.</p>
+
+                    <div class="socials">
+                        <a href="https://wa.me/256759604799" target="_blank" rel="noopener noreferrer"
+                            aria-label="WhatsApp" title="Chat on WhatsApp">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.884 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                            </svg>
+                        </a>
+                        <a href="https://youtu.be/g7xSnU4vMXM" target="_blank" rel="noopener noreferrer"
+                            aria-label="YouTube" title="Watch on YouTube">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                            </svg>
+                        </a>
+                        <a href="https://www.tiktok.com/@papacm.bts?is_from_webapp=1&amp;sender_device=pc"
+                            target="_blank" rel="noopener noreferrer" aria-label="TikTok" title="Follow on TikTok">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M16.6 2h3c.2 1.6 1 3 2.2 3.9.8.6 1.8 1 2.9 1.1v3.2c-1.9-.1-3.7-.7-5.2-1.8v6.8c0 3.9-3.2 7-7.1 7S5.3 19 5.3 15.2c0-3.7 2.9-6.8 6.6-7v3.3c-1.9.2-3.4 1.8-3.4 3.7 0 2 1.7 3.7 3.7 3.7s3.6-1.6 3.6-3.6L16.6 2Z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="foot-col">
+                    <h4>Product</h4>
+                    <a href="download.html">Download OS &amp; Setup</a>
+                    <a href="index.html#top">Overview</a>
+                    <a href="index.html#features-section">Showcase Gallery</a>
+                    <a href="index.html#how-it-works">How It Works</a>
+                    <a href="index.html#features-section">Point of Sale &amp; Cart</a>
+                    <a href="index.html#features-section">Inventory Intelligence</a>
+                    <a href="index.html#faq">Frequently Asked Questions</a>
+                </div>
+
+                <div class="foot-col">
+                    <h4>Guides &amp; Setup</h4>
+                    <a href="How to Setup.html">How to Setup</a>
+                    <a href="User Guide.html">Comprehensive User Guide</a>
+                    <a href="How to Setup.html#step-barcode">Barcode Scanner Setup</a>
+                    <a href="How to Setup.html#step-printer">Receipt Printer Setup</a>
+                    <a href="User Guide.html">Keyboard &amp; Cashier Guide</a>
+                    <a href="User Guide.html">Offline Security &amp; Backups</a>
+                </div>
+
+                <div class="foot-col">
+                    <h4>Retail Verticals</h4>
+                    <a href="index.html#top">Supermarkets &amp; Duukas</a>
+                    <a href="index.html#top">Phones &amp; Electronics Shops</a>
+                    <a href="index.html#top">Pharmacies &amp; Drug Stores</a>
+                    <a href="index.html#top">Agro-Vet &amp; Farm Supply</a>
+                    <a href="index.html#top">Liquor Stores &amp; Depots</a>
+                    <a href="index.html#top">Auto Spare Parts &amp; Hardware</a>
+                </div>
+
+                <div class="foot-col">
+                    <h4>African Coverage</h4>
+                    <a href="index.html#top">Uganda (UGX)</a>
+                    <a href="index.html#top">Kenya (KES)</a>
+                    <a href="index.html#top">Tanzania (TZS)</a>
+                    <a href="index.html#top">Rwanda (RWF)</a>
+                    <a href="index.html#top">South Sudan (SSP)</a>
+                    <a href="index.html#top">DR Congo (USD / CDF)</a>
+                    <span class="foot-coverage-text">Including all 54 countries across Africa</span>
+                </div>
+            </div>
+
+            <div class="foot-bottom">
+                <div class="foot-legal">
+                    <span>© 2026 CM RetailOS Systems. All rights reserved.</span>
+                    <div class="foot-legal-links">
+                        <a href="#">Privacy Policy</a>
+                        <span class="dot-sep">•</span>
+                        <a href="#">Terms of Use</a>
+                        <span class="dot-sep">•</span>
+                        <a href="#">Offline License</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Sticky header border
+        const header = document.querySelector('header');
+        addEventListener('scroll', () => header.classList.toggle('scrolled', scrollY > 10), { passive: true });
+
+        // Mobile menu
+        const ham = document.getElementById('hamburger'), mm = document.getElementById('mobileMenu');
+        ham.addEventListener('click', () => mm.classList.toggle('open'));
+        mm.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mm.classList.remove('open')));
+
+        // Scroll reveal
+        const io = new IntersectionObserver(es => {
+            es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target) } });
+        }, { threshold: .12, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.reveal').forEach((el, i) => {
+            el.style.transitionDelay = (i % 4) * 70 + 'ms';
+            io.observe(el);
+        });
+    </script>
+</body>
+
+</html>

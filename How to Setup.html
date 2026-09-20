@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script>document.documentElement.classList.add('js')</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Setup | CM RetailOS Suite v3.0 Offline POS Guide</title>
+  <meta name="description"
+    content="Official step-by-step setup and installation guide for CM RetailOS Suite v3.0. Learn how to install the offline retail OS, connect thermal printers, barcode scanners, and activate your air-gapped license.">
+  <link rel="icon" type="image/png" href="brand-logo.png">
+  <link rel="apple-touch-icon" href="brand-logo.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="theme.js" defer></script>
+</head>
+
+<body>
+  <!-- ================= NAV ================= -->
+  <header id="top">
+    <div class="container nav">
+      <a class="logo" href="index.html#top">
+        <img src="brand-logo.webp" alt="CM RetailOS" class="logo-img">
+        CM RetailOS
+      </a>
+      <nav class="nav-links">
+        <a href="index.html#features-section">Showcase</a>
+        <a href="index.html#how-it-works">How It Works</a>
+        <a href="How to Setup.html" class="active">How to Setup</a>
+        <a href="User Guide.html">User Guide</a>
+        <a href="download.html">Download</a>
+        <a href="index.html#faq">FAQ</a>
+      </nav>
+      <div class="nav-cta">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light/dark theme"
+          title="Switch between dark and light mode">
+          <svg class="theme-icon sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="theme-icon moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+        <a class="btn btn-primary" href="#setup-steps">Start Setup</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <nav class="mobile-menu" id="mobileMenu">
+      <a href="index.html#features-section">Showcase</a>
+      <a href="index.html#how-it-works">How It Works</a>
+      <a href="How to Setup.html" class="active">How to Setup</a>
+      <a href="User Guide.html">User Guide</a>
+      <a href="download.html">Download</a>
+      <a href="index.html#faq">FAQ</a>
+      <div class="mobile-theme-row">
+        <span>Appearance</span>
+        <button class="theme-toggle mobile-theme-btn" type="button" aria-label="Toggle light/dark theme">
+          <svg class="theme-icon sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="theme-icon moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <span class="theme-mode-label"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="setup-hero">
+    <div class="container">
+      <div class="setup-hero-inner">
+        <h1 class="reveal">How to Setup <span class="grad-text">CM RetailOS Suite v3.0</span></h1>
+        <p class="lead reveal" style="max-width:760px;margin-left:auto;margin-right:auto">
+          Complete zero-cloud setup instructions for African retail shops, supermarkets, wholesale depots, and
+          pharmacies.
+          Get your PC, receipt printers, and barcode scanners fully operational in under 5 minutes.
+        </p>
+
+        <!-- Quick Specs Badges -->
+        <div class="setup-badges reveal">
+          <span class="setup-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+            </svg>
+            100% Offline-First (0ms Latency)
+          </span>
+          <span class="setup-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+              <rect width="20" height="14" x="2" y="3" rx="2" />
+              <line x1="8" x2="16" y1="21" y2="21" />
+              <line x1="12" x2="12" y1="17" y2="21" />
+            </svg>
+            Windows 10 / 11 / 8.1 / 7 SP1
+          </span>
+          <span class="setup-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+              <polyline points="6 9 6 2 18 2 18 9" />
+              <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
+              <rect width="12" height="8" x="6" y="14" />
+            </svg>
+            ESC/POS 58mm &amp; 80mm
+          </span>
+          <span class="setup-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+              <path d="M3 7V5a2 2 0 0 1 2-2h2" />
+              <path d="M17 3h2a2 2 0 0 1 2 2v2" />
+              <path d="M21 17v2a2 2 0 0 1-2 2h-2" />
+              <path d="M7 21H5a2 2 0 0 1-2-2v-2" />
+              <path d="M7 12h10" />
+            </svg>
+            Plug &amp; Play Barcode Scanners
+          </span>
+          <span class="setup-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+              <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+            </svg>
+            Air-Gapped Device Licensing
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SYSTEM REQUIREMENTS ================= -->
+  <section class="section"
+    style="padding:40px 0 60px;background:hsl(220 50% 5%);border-top:1px solid var(--border-soft);border-bottom:1px solid var(--border-soft)">
+    <div class="container">
+      <div style="text-align:center;max-width:680px;margin:0 auto 36px">
+        <h2 class="title reveal" style="font-size:32px">System &amp; Hardware <span
+            class="grad-text">Prerequisites</span></h2>
+        <p class="sub reveal">CM RetailOS is optimized for ultra-low hardware overhead. It runs fluidly even on
+          entry-level budget counter PCs.</p>
+      </div>
+
+      <div class="req-grid">
+        <div class="req-card reveal">
+          <div class="req-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect width="20" height="14" x="2" y="3" rx="2" />
+              <line x1="8" x2="16" y1="21" y2="21" />
+              <line x1="12" x2="12" y1="17" y2="21" />
+            </svg>
+          </div>
+          <h4>Computer Operating System</h4>
+          <p>Windows 10, Windows 11, Windows 8.1, or Windows 7 SP1 (Both 64-bit and 32-bit architecture fully
+            supported).</p>
+        </div>
+
+        <div class="req-card reveal">
+          <div class="req-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect width="16" height="16" x="4" y="4" rx="2" />
+              <rect width="6" height="6" x="9" y="9" />
+              <path d="M15 2v2M9 2v2M20 15h2M20 9h2M9 20v2M15 20v2M2 9h2M2 15h2" />
+            </svg>
+          </div>
+          <h4>Memory &amp; Processor</h4>
+          <p>Minimum 2GB RAM (4GB+ recommended). Any dual-core Intel Core i3 / Celeron or AMD equivalent.</p>
+        </div>
+
+        <div class="req-card reveal">
+          <div class="req-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="22" y1="12" x2="2" y2="12" />
+              <path
+                d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z" />
+              <line x1="6" y1="16" x2="6.01" y2="16" />
+              <line x1="10" y1="16" x2="10.01" y2="16" />
+            </svg>
+          </div>
+          <h4>Local Storage</h4>
+          <p>500MB free disk space for application files and high-performance local encrypted database store.</p>
+        </div>
+
+        <div class="req-card reveal">
+          <div class="req-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 6 2 18 2 18 9" />
+              <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
+              <rect width="12" height="8" x="6" y="14" />
+            </svg>
+          </div>
+          <h4>Counter Peripherals</h4>
+          <p>Standard USB thermal printer (58mm or 80mm) and USB barcode scanner.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SETUP STEP-BY-STEP ================= -->
+  <section class="section" id="setup-steps">
+    <a id="step-1" style="position:absolute;top:0;visibility:hidden;"></a>
+    <div class="container">
+      <div style="text-align:center;max-width:700px;margin:0 auto 36px">
+        <h2 class="title reveal">The 6 Steps to <span class="grad-text">Full Store Readiness</span></h2>
+        <p class="sub reveal">Follow this visual guide to configure checkout lanes, print receipt tags, and establish
+          cashier access rules.</p>
+      </div>
+
+
+      <div class="setup-steps-list">
+
+        <!-- STEP 1 -->
+        <div class="step-box reveal" id="step-1-card">
+          <div class="step-badge-num">01</div>
+          <div class="step-main">
+            <div class="step-head-row">
+              <h3>Run the Setup Installers</h3>
+              <span class="step-tag">Software Setup</span>
+            </div>
+            <p>Download and run the official installers from the download page on your Windows register computer. Both
+              installers require no complicated database configuration, zero cloud accounts, and zero internet
+              connection:</p>
+
+            <div class="step-subgrid">
+              <div class="step-feature-card">
+                <div class="sfc-title">
+                  <span class="dot"></span> CM RetailOS Core Suite
+                </div>
+                <span class="sfc-filename">cm-retail-os-installer.exe</span>
+                <p>Installs the primary desktop operating system for your checkout PC: POS checkout, barcode manager,
+                  inventory deductions, multi-staff access control, and shift profit accounting.</p>
+              </div>
+              <div class="step-feature-card">
+                <div class="sfc-title">
+                  <span class="dot"></span> CM SheetViewer Auditor
+                </div>
+                <span class="sfc-filename">CM-SheetViewer-Setup-1.0.0.exe</span>
+                <p>Installs the standalone spreadsheet companion allowing shop owners and managers to search, view, and
+                  audit exported Excel (.xlsx, .xls), CSV, and encrypted monthly reports (<strong>.CMP</strong> &amp; <strong>.CMXL</strong>) without Microsoft Office.</p>
+              </div>
+            </div>
+
+            <div class="step-callout">
+              <strong>Tip:</strong> During setup, make sure to check all options, including <em>"Create Desktop
+                Shortcuts"</em>, so cashiers can launch directly into the POS workstation every morning.
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="step-box reveal" id="step-2">
+          <span id="step-printer" style="position:relative;top:-80px;visibility:hidden;display:block;"></span>
+          <div class="step-badge-num">02</div>
+          <div class="step-main">
+            <div class="step-head-row">
+              <h3>Connect Printers, &amp; Scanners</h3>
+              <span class="step-tag">Hardware Wiring</span>
+            </div>
+            <p>CM RetailOS communicates directly with standard retail peripherals over USB, Bluetooth, LAN, and serial
+              interfaces:</p>
+
+            <!-- Hardware Wiring Diagram Card -->
+            <div class="wiring-topology-card">
+              <div class="wiring-topology-title">Physical Counter Wiring Topology:</div>
+              <code class="wiring-topology-code">
+                [ Windows PC / Laptop ] --(USB / BT / LAN)--> [ 58mm/80mm Thermal Printer ]
+                                       --(USB Cable)-------> [ Laser Barcode Scanner ]
+              </code>
+            </div>
+
+            <div class="step-hardware-cards">
+              <div class="hw-card">
+                <h4>1. Thermal Receipt Printers (58mm &amp; 80mm)</h4>
+                <p>Connect your thermal printer via USB, Bluetooth / COM port, or Network TCP/IP. In CM RetailOS,
+                  navigate to <strong>Settings &gt; Receipt &amp; Printing</strong>, click <strong>+ Add
+                    Printer</strong>, and select your protocol (<strong>Windows Spooler</strong>, <strong>Bluetooth /
+                    COM Port</strong>, <strong>Direct USB</strong>, or <strong>Network TCP/IP</strong>). Choose your
+                  roll width (<strong>58mm</strong> or <strong>80mm</strong>) and click <strong>Test</strong> to verify
+                  print output and auto-cutter.</p>
+              </div>
+              <div class="hw-card">
+                <h4>2. Laser Barcode Scanners</h4>
+                <p>Connect any standard 1D or 2D USB barcode scanner. They operate automatically in USB HID keyboard
+                  emulation mode without requiring custom driver installation.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="step-box reveal" id="step-3">
+          <div class="step-badge-num">03</div>
+          <div class="step-main">
+            <div class="step-head-row">
+              <h3>Configure Your Store Profile &amp; Receipts</h3>
+              <span class="step-tag">Branding &amp; Currency</span>
+            </div>
+            <p>Open <strong>Settings &gt; Business Information</strong> (under <em>General &amp; Branding</em>) to
+              customize the information that appears on your
+              customer receipts and daily accounting ledger:</p>
+
+            <ul class="step-checklist-items">
+              <li><strong>Business Name</strong> e.g., <em>"Mutesasira Supermarket — Main Street
+                  Branch"</em>.</li>
+              <li><strong>Currency Notation:</strong> Set to your local currency (e.g., <code>UGX</code>,
+                <code>KSh</code>, <code>TSh</code>, <code>RWF</code>, <code>SSP</code>).
+              </li>
+              <li><strong>Receipt Header &amp; Footer Notes:</strong> Customize return policies (e.g., <em>"Goods once
+                  sold are returnable within 48 hours with receipt.
+                  Thank you for shopping with us!"</em>).</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- STEP 4 -->
+        <div class="step-box reveal" id="step-4">
+          <div class="step-badge-num">04</div>
+          <div class="step-main">
+            <div class="step-head-row">
+              <h3>Load Products, Barcodes &amp; Stock Levels</h3>
+              <span class="step-tag">Inventory Setup</span>
+            </div>
+            <p>Populating your inventory catalog into CM RetailOS is simple and fast:</p>
+
+            <ul class="step-checklist-items" style="margin-bottom:16px">
+              <li><strong>Open Products:</strong> In the sidebar under <strong>Inventory</strong>, click
+                <strong>Products</strong>.
+              </li>
+              <li><strong>Click Manage:</strong> Click the green <strong>Manage ▾</strong> button at the top right and
+                select <strong>+ Add Product</strong>.</li>
+              <li><strong>Enter Item &amp; Barcode:</strong> Fill in the <strong>Product Name</strong>, choose a
+                <strong>Category</strong>, and scan the manufacturer barcode directly into the <strong>Barcode</strong>
+                field with your scanner.
+              </li>
+              <li><strong>Set Pricing Margins:</strong> Enter your <strong>Cost Price</strong> and <strong>Selling
+                  Price</strong>. CM RetailOS automatically computes and tracks your profit per unit live.</li>
+              <li><strong>Configure Stock &amp; Units:</strong> Enter the <strong>Initial Qty</strong>, set a
+                <strong>Min Stock</strong> threshold for low-stock alerts, select the unit (<em>pcs, kg, L, g, ml, pack,
+                  box</em>), and click <strong>Save Product</strong>.
+              </li>
+            </ul>
+
+            <div class="step-callout">
+              <strong>Tip:</strong> Products added here are immediately ready in the <strong>Point of Sale</strong>
+              screen for instant barcode checkout.
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 5 -->
+        <div class="step-box reveal" id="step-5">
+          <div class="step-badge-num">05</div>
+          <div class="step-main">
+            <div class="step-head-row">
+              <h3>Create Staff Roles &amp; Lock Cashier Mode</h3>
+              <span class="step-tag">Cashier Anti-Shrinkage</span>
+            </div>
+            <p>Eliminate shop pilferage, unauthorized discounts, and cash leakage using granular permission controls:
+            </p>
+
+            <ul class="step-checklist-items" style="margin-bottom:16px">
+              <li><strong>Provision Staff Account:</strong> Navigate to <strong>Settings &gt; Users &amp; Staff</strong>
+                (under <em>Security &amp; Access</em>),
+                click <strong>Add New Staff Account</strong>, enter the <strong>Username</strong>, and select the
+                <strong>Role</strong> (e.g. <em>Cashier</em>).
+              </li>
+              <li><strong>Granular Module Permissions:</strong> Customize exact access rights across 6 dedicated
+                permission toggles:
+                <div
+                  style="display:grid;grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));gap:8px;margin:10px 0 6px;">
+                  <span style="font-size:12.5px;color:var(--muted);"><strong style="color:var(--fg);">• Point of Sale
+                      (POS):</strong> Checkout and sales terminal</span>
+                  <span style="font-size:12.5px;color:var(--muted);"><strong style="color:var(--fg);">• Inventory
+                      Management:</strong> Products, stock levels, categories</span>
+                  <span style="font-size:12.5px;color:var(--muted);"><strong style="color:var(--fg);">• Business
+                      Intelligence:</strong> Charts and profit analytics</span>
+                  <span style="font-size:12.5px;color:var(--muted);"><strong style="color:var(--fg);">• Sales
+                      History:</strong> Past transactions and receipts</span>
+                  <span style="font-size:12.5px;color:var(--muted);"><strong style="color:var(--fg);">• Audit
+                      Logs:</strong> System events and user audit trails</span>
+                  <span style="font-size:12.5px;color:var(--muted);"><strong style="color:var(--fg);">• Settings &amp;
+                      Configuration:</strong> Preferences and backups</span>
+                </div>
+              </li>
+              <li><strong>Lock Cashier Mode:</strong> For counter staff, enable <strong>Point of Sale (POS)</strong>
+                only and leave all other permissions unchecked. Buying prices, profit margins, inventory edits, and
+                system settings remain completely inaccessible.</li>
+              <li><strong>Save &amp; Protect:</strong> Click <strong>+ Create Account</strong> (or <strong>✓ Save
+                  Changes</strong>) to instantly enforce role protection.</li>
+            </ul>
+
+            <div class="step-callout">
+              <strong>Anti-Shrinkage Protection:</strong> With locked cashier permissions, cashiers can quickly scan and
+              ring up sales, but cannot view profit margins, alter past transaction records, or manipulate stock
+              quantities.
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 6 -->
+        <div class="step-box reveal" id="step-6">
+          <div class="step-badge-num">06</div>
+          <div class="step-main">
+            <div class="step-head-row">
+              <h3>Activate Air-Gapped License</h3>
+              <span class="step-tag">Permanent Sovereignty</span>
+            </div>
+            <p>Activate your license securely without requiring an internet connection:</p>
+
+            <div class="step-callout">
+              <ol style="margin-left:20px;padding-left:0;line-height:1.75;font-size:14px">
+                <li>Navigate to <strong>Settings &gt; Activation</strong> inside CM RetailOS and copy your unique
+                  <strong>Device ID</strong>.
+                </li>
+                <li>Pay the license fee via Mobile Money to the official payment lines below.</li>
+                <li>Quote your <strong>Device ID</strong> and payment reference via WhatsApp to receive your
+                  cryptographically generated license key.</li>
+                <li>Paste your issued <strong>License Key</strong> into the activation field and click <strong>Activate
+                    Workspace</strong>. Verification happens 100% locally.</li>
+              </ol>
+            </div>
+
+            <!-- Official Payment Lines Card -->
+            <div
+              style="background:hsl(217 38% 11%);border:1px solid var(--border);border-radius:14px;padding:20px 22px;margin-top:18px;">
+              <div
+                style="font-size:11px;font-weight:750;letter-spacing:.08em;color:#10b981;text-transform:uppercase;margin-bottom:4px">
+                OFFICIAL PAYMENT LINES</div>
+              <h4 style="font-size:16.5px;font-weight:700;color:var(--fg);margin-bottom:6px">Need to Purchase or Renew a
+                Plan?</h4>
+              <p style="font-size:13px;color:var(--muted);margin-bottom:14px;line-height:1.5">
+                Pay directly via Mobile Money &amp; quote your Device ID above via WhatsApp to receive your renewal
+                license key:
+                <br><strong style="color:var(--fg)">Account Name:</strong> <span
+                  style="color:#10b981;font-weight:600">Christopher Muheki</span>
+              </p>
+
+              <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:12px">
+                <!-- MTN MoMo -->
+                <div
+                  style="display:flex;align-items:center;justify-content:space-between;background:rgba(250,204,21,0.06);border:1px solid rgba(250,204,21,0.35);padding:10px 16px;border-radius:10px">
+                  <div style="display:flex;align-items:center;gap:12px">
+                    <span
+                      style="background:#ffcc00;color:#000;font-weight:800;font-size:11px;padding:4px 9px;border-radius:6px;letter-spacing:.04em">MTN</span>
+                    <span style="font-family:var(--mono);font-size:15px;font-weight:700;color:var(--fg)">0761 598
+                      636</span>
+                  </div>
+                </div>
+
+                <!-- Airtel Money -->
+                <div
+                  style="display:flex;align-items:center;justify-content:space-between;background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.35);padding:10px 16px;border-radius:10px">
+                  <div style="display:flex;align-items:center;gap:12px">
+                    <span
+                      style="background:#e11d48;color:#fff;font-weight:800;font-size:11px;padding:4px 9px;border-radius:6px;letter-spacing:.04em">airtel</span>
+                    <span style="font-family:var(--mono);font-size:15px;font-weight:700;color:var(--fg)">0759 604
+                      799</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <p style="margin-top:14px;color:var(--muted);font-size:13.5px;line-height:1.5">
+              Because licensing is fully air-gapped, your database is 100% private, locally encrypted, and operates
+              completely offline with zero dependency on cloud servers.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ================= TROUBLESHOOTING FAQ ================= -->
+  <section class="section" id="faq">
+    <div class="container">
+      <div style="text-align:center;max-width:640px;margin:0 auto 40px">
+        <h2 class="title reveal">Setup &amp; Hardware <span class="grad-text">Troubleshooting</span></h2>
+        <p class="sub reveal">Common setup questions and hardware troubleshooting solutions.</p>
+      </div>
+
+      <div class="faq-wrap">
+        <details class="faq-item reveal" open>
+          <summary>My thermal printer prints strange symbols or garbled characters. How do I fix this? <span
+              class="plus">+</span></summary>
+          <div class="answer">
+            <p style="margin-bottom:10px">This typically happens if the wrong connection protocol, baud rate, or paper
+              column width is configured. In CM RetailOS, resolve this in a few simple steps:</p>
+            <ol style="margin:0 0 10px 20px;padding-left:0;line-height:1.75">
+              <li>In the left sidebar, click <strong>Settings</strong> and open <strong>Receipt &amp; Printing</strong>
+                under <em>General &amp; Branding</em>.</li>
+              <li>Under <strong>POS Receipt Printers</strong>, click the <strong>Edit (pencil)</strong> icon next to
+                your printer (or click <strong>+ Add Printer</strong>).</li>
+              <li>Verify your <strong>Connection Protocol / Transport</strong>:
+                <ul style="margin:5px 0 6px 18px;list-style:disc;line-height:1.6">
+                  <li><strong>Windows Spooler:</strong> Recommended for USB thermal printers. Click
+                    <strong>Scan</strong> to detect installed Windows printers, or enter the printer name (e.g.,
+                    <em>POS-80</em> or <em>EPSON TM-T88VI</em>).
+                  </li>
+                  <li><strong>Bluetooth / COM Port:</strong> For wireless Bluetooth or serial RS-232 printers (e.g.,
+                    <em>Bluetooth Serial (COM15)</em>). Ensure the COM port matches Windows Device Manager.
+                  </li>
+                  <li><strong>Direct USB:</strong> For direct raw USB port printing without Windows spooler
+                    interference.</li>
+                  <li><strong>Network TCP/IP:</strong> For Ethernet or Wi-Fi POS receipt printers.</li>
+                </ul>
+              </li>
+              <li>Check your <strong>Paper Roll Width</strong> and <strong>Characters Per Line</strong>:
+                <ul style="margin:5px 0 6px 18px;list-style:disc;line-height:1.6">
+                  <li>For <strong>58mm</strong> rolls, choose <strong>58mm</strong> (standard width: <strong>32
+                      cols</strong>).</li>
+                  <li>For <strong>80mm</strong> rolls, choose <strong>80mm (Standard POS)</strong> (standard width:
+                    <strong>48 cols</strong>).
+                  </li>
+                </ul>
+              </li>
+              <li>Click the <strong>Test</strong> button to verify clean character output and auto-cutting, then click
+                <strong>Save Configurations</strong>.
+              </li>
+            </ol>
+          </div>
+        </details>
+
+        <details class="faq-item reveal">
+          <summary>Can I run CM RetailOS on multiple cash registers in the same store? <span class="plus">+</span>
+          </summary>
+          <div class="answer">Yes! Each checkout counter can run CM RetailOS independently on its own Windows PC.</div>
+        </details>
+
+        <details class="faq-item reveal">
+          <summary>What happens if my computer crashes or gets stolen? How do I restore data? <span
+              class="plus">+</span></summary>
+          <div class="answer">CM RetailOS features an automated 1-click backup tool. You can set it to automatically
+            create an encrypted backup of your entire sales and inventory database onto an external USB flash drive or
+            external hard drive at the end of each day. You can restore this backup onto any new Windows computer in 30
+            seconds.</div>
+        </details>
+
+        <details class="faq-item reveal">
+          <summary>Do I need to buy Microsoft Office to view and audit sales reports? <span class="plus">+</span>
+          </summary>
+          <div class="answer">
+            <p style="margin-bottom:12px">No! You can download <strong>CM SheetViewer</strong> directly from our download page — our custom standalone spreadsheet engine. You can open, filter, search, and audit all exported Excel (.xlsx, .xls) and CSV sales reports with zero dependencies on Microsoft Office or internet cloud tools.</p>
+
+            <div style="background:hsl(199 89% 48% / .08);border:1px solid hsl(199 89% 48% / .25);border-radius:10px;padding:12px 16px;margin-top:10px;font-size:13.5px;line-height:1.55">
+              <div style="font-weight:700;margin-bottom:4px;display:flex;align-items:center;gap:6px;color:var(--primary-light)">
+                🔒 CM RetailOS Exclusive Monthly Reports
+              </div>
+              <div style="color:var(--muted);font-size:13px;line-height:1.6">
+                <strong>.CMP</strong> and <strong>.CMXL</strong> are encrypted proprietary formats <strong>exported automatically</strong> by CM RetailOS for monthly business reports. They strictly require <strong>Admin credentials</strong> to open in CM SheetViewer, ensuring that only the store owner or authorized administrator can access confidential financial ledgers.
+              </div>
+            </div>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer id="blog">
+    <div class="container">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <a class="logo" href="index.html#top">
+            <img src="brand-logo.webp" alt="CM RetailOS" class="logo-img">
+            CM RetailOS
+          </a>
+          <p class="foot-desc">Enterprise-grade 100% offline desktop Operating System built to streamline checkout,
+            protect stock, and track profits for retail shops across Africa.</p>
+
+          <div class="socials">
+            <a href="https://wa.me/256759604799" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
+              title="Chat on WhatsApp">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.884 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+              </svg>
+            </a>
+            <a href="https://youtu.be/g7xSnU4vMXM" target="_blank" rel="noopener noreferrer" aria-label="YouTube"
+              title="Watch on YouTube">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+              </svg>
+            </a>
+            <a href="https://www.tiktok.com/@papacm.bts?is_from_webapp=1&amp;sender_device=pc" target="_blank"
+              rel="noopener noreferrer" aria-label="TikTok" title="Follow on TikTok">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M16.6 2h3c.2 1.6 1 3 2.2 3.9.8.6 1.8 1 2.9 1.1v3.2c-1.9-.1-3.7-.7-5.2-1.8v6.8c0 3.9-3.2 7-7.1 7S5.3 19 5.3 15.2c0-3.7 2.9-6.8 6.6-7v3.3c-1.9.2-3.4 1.8-3.4 3.7 0 2 1.7 3.7 3.7 3.7s3.6-1.6 3.6-3.6L16.6 2Z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="foot-col">
+          <h4>Product</h4>
+          <a href="index.html#top">Overview</a>
+          <a href="index.html#features-section">Showcase Gallery</a>
+          <a href="index.html#how-it-works">How It Works</a>
+          <a href="index.html#features-section">Point of Sale &amp; Cart</a>
+          <a href="index.html#features-section">Inventory Intelligence</a>
+          <a href="index.html#faq">Frequently Asked Questions</a>
+        </div>
+        <div class="foot-col">
+          <h4>Guides &amp; Setup</h4>
+          <a href="How to Setup.html">How to Setup</a>
+          <a href="User Guide.html">Comprehensive User Guide</a>
+          <a href="How to Setup.html#step-barcode">Barcode Scanner Setup</a>
+          <a href="How to Setup.html#step-printer">Receipt Printer Setup</a>
+          <a href="User Guide.html">Keyboard &amp; Cashier Guide</a>
+          <a href="User Guide.html">Offline Security &amp; Backups</a>
+        </div>
+        <div class="foot-col">
+          <h4>Retail Verticals</h4>
+          <a href="index.html#top">Supermarkets &amp; Duukas</a>
+          <a href="index.html#top">Phones &amp; Electronics Shops</a>
+          <a href="index.html#top">Pharmacies &amp; Drug Stores</a>
+          <a href="index.html#top">Agro-Vet &amp; Farm Supply</a>
+          <a href="index.html#top">Liquor Stores &amp; Depots</a>
+          <a href="index.html#top">Auto Spare Parts &amp; Hardware</a>
+        </div>
+        <div class="foot-col">
+          <h4>African Coverage</h4>
+          <a href="index.html#top">Uganda (UGX)</a>
+          <a href="index.html#top">Kenya (KES)</a>
+          <a href="index.html#top">Tanzania (TZS)</a>
+          <a href="index.html#top">Rwanda (RWF)</a>
+          <a href="index.html#top">South Sudan (SSP)</a>
+          <a href="index.html#top">DR Congo (USD / CDF)</a>
+          <span class="foot-coverage-text">Including all 54 countries across Africa</span>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <div class="foot-legal">
+          <span>© 2026 CM RetailOS Systems. All rights reserved.</span>
+          <div class="foot-legal-links">
+            <a href="#">Privacy Policy</a>
+            <span class="dot-sep">•</span>
+            <a href="#">Terms of Use</a>
+            <span class="dot-sep">•</span>
+            <a href="#">Offline License</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Sticky header border
+    const header = document.querySelector('header');
+    addEventListener('scroll', () => header.classList.toggle('scrolled', scrollY > 10), { passive: true });
+
+    // Mobile menu
+    const ham = document.getElementById('hamburger'), mm = document.getElementById('mobileMenu');
+    ham.addEventListener('click', () => mm.classList.toggle('open'));
+    mm.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mm.classList.remove('open')));
+
+    // Scroll reveal
+    const io = new IntersectionObserver(es => {
+      es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target) } });
+    }, { threshold: .12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach((el, i) => {
+      el.style.transitionDelay = (i % 4) * 70 + 'ms';
+      io.observe(el);
+    });
+
+  </script>
+</body>
+
+</html>

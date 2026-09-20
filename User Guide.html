@@ -1,0 +1,1830 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script>document.documentElement.classList.add('js')</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Guide | CM RetailOS Suite v3.0 Operations Manual</title>
+  <meta name="description"
+    content="Official user manual and operations guide for CM RetailOS Suite v3.0. Complete illustrated instructions for cashier POS checkout, barcode inventory management, shift cash drawer reconciliation, profit intelligence, and CM SheetViewer auditing.">
+  <link rel="icon" type="image/png" href="brand-logo.png">
+  <link rel="apple-touch-icon" href="brand-logo.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="theme.js" defer></script>
+  <style>
+    /* Dedicated Guide & Screenshot Styles */
+    .guide-figure {
+      margin: 28px 0;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #080c18;
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.55);
+      transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease;
+    }
+
+    .guide-figure:hover {
+      border-color: rgba(56, 189, 248, 0.6);
+      box-shadow: 0 18px 40px rgba(6, 182, 212, 0.2);
+    }
+
+    .guide-figure img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;
+      display: block;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .guide-caption {
+      padding: 14px 20px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #94a3b8;
+      background: rgba(15, 23, 42, 0.96);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      line-height: 1.5;
+    }
+
+    .guide-caption .fig-tag {
+      background: rgba(56, 189, 248, 0.15);
+      color: #38bdf8;
+      font-weight: 700;
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+
+    .guide-sub-block {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .guide-badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .badge-cyan {
+      background: rgba(6, 182, 212, 0.15);
+      color: #22d3ee;
+      border: 1px solid rgba(6, 182, 212, 0.3);
+    }
+
+    .badge-green {
+      background: rgba(34, 197, 94, 0.15);
+      color: #4ade80;
+      border: 1px solid rgba(34, 197, 94, 0.3);
+    }
+
+    .badge-purple {
+      background: rgba(168, 85, 247, 0.15);
+      color: #c084fc;
+      border: 1px solid rgba(168, 85, 247, 0.3);
+    }
+
+    .badge-amber {
+      background: rgba(245, 158, 11, 0.15);
+      color: #fbbf24;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+
+    /* Teaching / explanation blocks under each figure */
+    .guide-explain {
+      padding: 18px 22px 20px;
+      background: rgba(8, 14, 26, 0.92);
+      border-top: 1px dashed rgba(148, 163, 184, 0.25);
+      color: #cbd5e1;
+      font-size: 14.5px;
+      line-height: 1.65;
+    }
+
+    .ge-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #e2e8f0;
+      font-weight: 700;
+      font-size: 12.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 10px;
+    }
+
+    .ge-head .ge-ico {
+      width: 17px;
+      height: 17px;
+      color: #38bdf8;
+      flex: 0 0 auto;
+    }
+
+    .ge-para {
+      margin: 0 0 10px;
+      color: #9fb0c7;
+    }
+
+    .ge-steps {
+      margin: 0 0 4px;
+      padding: 0;
+      list-style: none;
+      counter-reset: ges;
+    }
+
+    .ge-steps li {
+      counter-increment: ges;
+      position: relative;
+      padding: 4px 0 4px 34px;
+      color: #cbd5e1;
+    }
+
+    .ge-steps li::before {
+      content: counter(ges);
+      position: absolute;
+      left: 0;
+      top: 6px;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      color: #38bdf8;
+      font-size: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ge-tip,
+    .ge-warn {
+      margin-top: 10px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-size: 13.5px;
+      line-height: 1.55;
+    }
+
+    .ge-tip {
+      background: rgba(34, 197, 94, 0.08);
+      border: 1px solid rgba(34, 197, 94, 0.25);
+      color: #a7f3d0;
+    }
+
+    .ge-warn {
+      background: rgba(245, 158, 11, 0.08);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      color: #fde68a;
+    }
+
+    .guide-caption code,
+    .guide-explain code {
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      color: #7dd3fc;
+      padding: 1px 6px;
+      border-radius: 5px;
+      font-family: ui-monospace, 'Cascadia Mono', Consolas, monospace;
+      font-size: 12.5px;
+      word-break: break-word;
+    }
+
+    @media (max-width: 640px) {
+      .guide-caption {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        padding: 10px 14px;
+        font-size: 12.5px;
+      }
+
+      .guide-caption .fig-tag {
+        font-size: 11px;
+        padding: 3px 8px;
+      }
+
+      .guide-explain {
+        padding: 14px 16px;
+        font-size: 13.5px;
+      }
+
+      .ge-steps li {
+        padding-left: 28px;
+      }
+
+      .ge-steps li::before {
+        width: 18px;
+        height: 18px;
+        font-size: 10.5px;
+        top: 6px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ================= NAV ================= -->
+  <header id="top">
+    <div class="container nav">
+      <a class="logo" href="index.html#top">
+        <img src="brand-logo.webp" alt="CM RetailOS" class="logo-img">
+        CM RetailOS
+      </a>
+      <nav class="nav-links">
+        <a href="index.html#features-section">Showcase</a>
+        <a href="index.html#how-it-works">How It Works</a>
+        <a href="How to Setup.html">How to Setup</a>
+        <a href="User Guide.html" class="active">User Guide</a>
+        <a href="download.html">Download</a>
+        <a href="index.html#faq">FAQ</a>
+      </nav>
+      <div class="nav-cta">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light/dark theme"
+          title="Switch between dark and light mode">
+          <svg class="theme-icon sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="theme-icon moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+        <a class="btn btn-primary" href="CM-RetailOS-User-Guide.pdf" download="CM-RetailOS-User-Guide.pdf">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="15" height="15">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          Download Manual
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <nav class="mobile-menu" id="mobileMenu">
+      <a href="index.html#features-section">Showcase</a>
+      <a href="index.html#how-it-works">How It Works</a>
+      <a href="How to Setup.html">How to Setup</a>
+      <a href="User Guide.html" class="active">User Guide</a>
+      <a href="download.html">Download OS</a>
+      <a href="CM-RetailOS-User-Guide.pdf" download="CM-RetailOS-User-Guide.pdf">Download Manual (.pdf)</a>
+      <a href="index.html#faq">FAQ</a>
+      <div class="mobile-theme-row">
+        <span>Appearance</span>
+        <button class="theme-toggle mobile-theme-btn" type="button" aria-label="Toggle light/dark theme">
+          <svg class="theme-icon sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="theme-icon moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <span class="theme-mode-label"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="setup-hero">
+    <div class="container">
+      <div class="setup-hero-inner">
+        <h1 class="reveal">CM RetailOS Suite v3.0 <span class="grad-text">User Guide</span></h1>
+        <p class="lead reveal" style="max-width:780px;margin-left:auto;margin-right:auto">
+          The definitive illustrated operational handbook for cashiers, stock managers, accountants, and store owners.
+          Master first-time setup, hardware licensing, split-second barcode checkouts, inventory tracking, shift
+          reconciliation, offline profit intelligence, and standalone spreadsheet auditing.
+        </p>
+        <div class="reveal" style="display:flex;justify-content:center;margin:22px 0 12px">
+          <a class="btn btn-primary btn-lg" href="CM-RetailOS-User-Guide.pdf" download="CM-RetailOS-User-Guide.pdf"
+            style="box-shadow:0 8px 24px -6px hsl(199 89% 48% / .5)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="18" height="18">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            Download Manual (.pdf)
+          </a>
+        </div>
+
+        <!-- Topic Pills Quick Navigation -->
+        <div class="guide-nav-pills reveal" style="flex-wrap:wrap;justify-content:center;gap:10px;margin-top:24px">
+          <a href="#module-1" class="guide-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+              <circle cx="12" cy="12" r="3" />
+              <path
+                d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+            </svg>
+            01. Setup Wizard
+          </a>
+          <a href="#module-2" class="guide-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+              <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+            </svg>
+            02. Activation &amp; Licensing
+          </a>
+          <a href="#module-3" class="guide-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
+            03. Sign-In &amp; Roles
+          </a>
+          <a href="#module-4" class="guide-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+              <rect width="20" height="14" x="2" y="3" rx="2" />
+              <line x1="8" x2="16" y1="21" y2="21" />
+              <line x1="12" x2="12" y1="17" y2="21" />
+            </svg>
+            04. Dashboard Telemetry
+          </a>
+          <a href="#module-5" class="guide-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+              <path
+                d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z" />
+              <path d="m3.3 7 8.7 5 8.7-5" />
+              <path d="M12 22V12" />
+            </svg>
+            05. Inventory &amp; Android Scan
+          </a>
+          <a href="#module-6" class="guide-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+              <circle cx="8" cy="21" r="1" />
+              <circle cx="19" cy="21" r="1" />
+              <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+            </svg>
+            06. POS Cashier Terminal
+          </a>
+          <a href="#module-7" class="guide-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+              <path d="M3 3v18h18" />
+              <path d="m19 9-5 5-4-4-3 3" />
+            </svg>
+            07. Profit &amp; Basket BI
+          </a>
+          <a href="#module-8" class="guide-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+              <path
+                d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" />
+              <circle cx="12" cy="12" r="3" />
+            </svg>
+            08. Settings &amp; Backup
+          </a>
+          <a href="#module-9" class="guide-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+              <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
+              <polyline points="14 2 14 8 20 8" />
+              <path d="M8 13h8M8 17h8M10 9h1" />
+            </svg>
+            09. CM SheetViewer
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MODULE 1: SETUP WIZARD ================= -->
+  <section class="section" id="module-1" style="padding-top:40px">
+    <div class="container">
+      <div class="guide-section-head reveal">
+        <h2 class="title">First-Time Setup &amp; <span class="grad-text">Onboarding Wizard</span></h2>
+        <p class="sub">When launching CM RetailOS for the first time, an intuitive 4-step wizard personalizes your
+          workspace theme, currency, store branding, and root administrator credentials.</p>
+      </div>
+
+      <!-- Figure 1.1 -->
+      <div class="guide-figure reveal">
+        <img src="images/1.webp" alt="CM RetailOS Setup Wizard Step 1 Theme and Accent Color" loading="lazy">
+        <div class="guide-caption">
+          <span class="fig-tag">Figure 1.1</span>
+          <span>Setup Wizard — Step 1: Color Scheme (Dark Mode, Light Mode, System Match) &amp; 8-Color Accent
+            Palette</span>
+        </div>
+        <div class="guide-explain">
+          <div class="ge-head"><svg class="ge-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+            </svg>How to read &amp; use this screen</div>
+          <p class="ge-para">This is the very first screen CM RetailOS shows after installation — Step 1 of 4 of the
+            onboarding wizard. The left rail tracks your progress through Theme &amp; style → Business details → Admin
+            account → Ready to launch, while the main panel asks you to choose your workspace look: a Color Scheme (Dark
+            Mode, Light Mode or System Match) and an Accent Color from the 8-swatch palette.</p>
+          <ol class="ge-steps">
+            <li>Pick a Color Scheme — Dark Mode is easiest on the eyes for night shifts, Light Mode suits bright sunlit
+              shops, and System Match simply follows your Windows setting.</li>
+            <li>Click any accent swatch to set the highlight color used on buttons, active menus and charts across the
+              whole app.</li>
+            <li>Press Continue to move on to Step 2.</li>
+          </ol>
+          <div class="ge-tip">💡 <strong>Pro tip:</strong> This choice is purely cosmetic — you can change the scheme
+            and accent any time later under Settings → Appearance &amp; Theme.</div>
+        </div>
+      </div>
+
+      <!-- Figure 1.2 & 1.3 -->
+      <div class="step-subgrid" style="margin-top:20px">
+        <div class="guide-figure reveal" style="margin:0">
+          <img src="images/2.webp" alt="Setup Wizard Light Mode Theme" loading="lazy">
+          <div class="guide-caption">
+            <span class="fig-tag">Figure 1.2</span>
+            <span>Step 1: High-Visibility Light Mode Active</span>
+          </div>
+          <div class="guide-explain">
+            <div class="ge-head"><svg class="ge-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+              </svg>How to read &amp; use this screen</div>
+            <p class="ge-para">The same Step 1 with Light Mode selected so you can compare both looks before committing.
+              Notice the two reassurances on this screen: “Select your preferred appearance and accent color. You can
+              change this anytime.” and “Your details stay on this device.” — the wizard saves everything locally; no
+              internet account is created.</p>
+            <ol class="ge-steps">
+              <li>Toggle between Dark and Light and watch the entire wizard re-skin instantly.</li>
+              <li>Judge readability from your real counter distance — sunlight near windows washes out dark themes.</li>
+              <li>Confirm your choice and continue; the progress bar reads Step 1 of 4, 0% complete.</li>
+            </ol>
+          </div>
+        </div>
+        <div class="guide-figure reveal" style="margin:0">
+          <img src="images/3.webp" alt="Setup Wizard Amber Accent" loading="lazy">
+          <div class="guide-caption">
+            <span class="fig-tag">Figure 1.3</span>
+            <span>Step 1: Custom Amber Accent Selected</span>
+          </div>
+          <div class="guide-explain">
+            <div class="ge-head"><svg class="ge-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+              </svg>How to read &amp; use this screen</div>
+            <p class="ge-para">Step 1 with a custom amber/orange accent selected over Dark Mode. The accent color is the
+              single hue CM RetailOS uses for primary buttons, active sidebar items, links and chart highlights
+              everywhere in the app.</p>
+            <ol class="ge-steps">
+              <li>Click several swatches and watch the previewed controls change color.</li>
+              <li>Choose an accent that clearly contrasts your scheme so actionable items stand out.</li>
+              <li>Continue when you are happy with the combination.</li>
+            </ol>
+            <div class="ge-tip">💡 <strong>Pro tip:</strong> Match the accent to your shop signage or logo color for a
+              branded, professional feel on every screen.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Figure 1.4 & 1.5 -->
+      <div class="step-subgrid" style="margin-top:24px">
+        <div class="guide-figure reveal" style="margin:0">
+          <img src="images/4.webp" alt="Step 2 Empty Business Form" loading="lazy">
+          <div class="guide-caption">
+            <span class="fig-tag">Figure 1.4</span>
+            <span>Step 2: Business Profile Form (Empty)</span>
+          </div>
+          <div class="guide-explain">
+            <div class="ge-head"><svg class="ge-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+              </svg>How to read &amp; use this screen</div>
+            <p class="ge-para">Step 2 of 4 — “Tell us about your business.” The empty form waits for four required
+              inputs: Country, Business or shop name, Phone number and Physical address. These details personalise the
+              workspace and are printed on receipts and reports.</p>
+            <ol class="ge-steps">
+              <li>Choose your country first — it automatically sets your currency (Uganda → Uganda Shilling USh/UGX) and
+                phone format.</li>
+              <li>Type the business name exactly as customers should see it on receipts.</li>
+              <li>Enter a phone number you check daily, plus the shop's physical address.</li>
+              <li>Press Continue once every marked field is filled.</li>
+            </ol>
+            <div class="ge-warn">⚠️ <strong>Watch out:</strong> Receipts, reports and the dashboard all reuse this
+              information — a misspelled shop name will print on every single receipt until you fix it in Settings.
+            </div>
+          </div>
+        </div>
+        <div class="guide-figure reveal" style="margin:0">
+          <img src="images/21.webp" alt="Step 2 Completed Business Details" loading="lazy">
+          <div class="guide-caption">
+            <span class="fig-tag">Figure 1.5</span>
+            <span>Step 2: Completed Profile for "Real Supermarket"</span>
+          </div>
+          <div class="guide-explain">
+            <div class="ge-head"><svg class="ge-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+              </svg>How to read &amp; use this screen</div>
+            <p class="ge-para">A completed Step 2 for “Real Supermarket”: country Uganda, currency Uganda shilling (USh
+              UGX), Mobile Money phone +256 759604799 with the green “Valid number for Uganda (+256)” confirmation, and
+              address Nansana, Kyebando. The progress bar now reads 33% complete.</p>
+            <ol class="ge-steps">
+              <li>Watch the phone field validate as you type — the helper line confirms the country format.</li>
+              <li>The Mobile Money number doubles as your licence-payment contact, so keep it active.</li>
+              <li>Continue unlocks only when all required fields pass validation.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <!-- Figure 1.6 & 1.7 -->
+      <div class="step-subgrid" style="margin-top:24px">
+        <div class="guide-figure reveal" style="margin:0">
+          <img src="images/5.webp" alt="Step 3 Empty Administrator Form" loading="lazy">
+          <div class="guide-caption">
+            <span class="fig-tag">Figure 1.6</span>
+            <span>Step 3: Administrator Account Setup (Empty)</span>
+          </div>
+          <div class="guide-explain">
+            <div class="ge-head"><svg class="ge-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+              </svg>How to read &amp; use this screen</div>
+            <p class="ge-para">Step 3 of 4 — “Create your administrator account. This account has full access to your
+              business.” You supply Your full name, a Username, a Password and Repeat password. This master account is
+              the only one that can open Settings, see profit analytics and manage staff.</p>
+            <ol class="ge-steps">
+              <li>Enter the owner's full name — it appears in the profile menu and audit logs.</li>
+              <li>Choose a short username without spaces (for example <code>muheki</code>).</li>
+              <li>Type a strong password and repeat it exactly.</li>
+              <li>Never share this account with cashiers — create separate cashier accounts later instead.</li>
+            </ol>
+            <div class="ge-warn">⚠️ <strong>Watch out:</strong> Whoever holds the administrator password can view every
+              profit figure, change prices and manage staff. Treat it like your safe key.</div>
+          </div>
+        </div>
+        <div class="guide-figure reveal" style="margin:0">
+          <img src="images/22.webp" alt="Step 3 Administrator Account Validated" loading="lazy">
+          <div class="guide-caption">
+            <span class="fig-tag">Figure 1.7</span>
+            <span>Step 3: Master Admin Credentials Validated</span>
+          </div>
+          <div class="guide-explain">
+            <div class="ge-head"><svg class="ge-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+              </svg>How to read &amp; use this screen</div>
+            <p class="ge-para">Step 3 filled in for Christopher Muheki (username <code>muheki</code>) with the live
+              “Passwords match” confirmation showing — that confirmation is what enables the Continue button. The wizard
+              re-checks both password boxes on every keystroke.</p>
+            <ol class="ge-steps">
+              <li>If “Passwords match” does not appear, re-type both fields slowly — one mismatched character blocks
+                you.</li>
+              <li>Once confirmed, press Continue to reach the final review step.</li>
+            </ol>
+            <div class="ge-tip">💡 <strong>Pro tip:</strong> Use a passphrase of three random words plus a number —
+              long, memorable, and hard to guess at a shared counter.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Figure 1.8 -->
+      <div class="guide-figure reveal" style="margin-top:24px">
+        <img src="images/23.webp" alt="Step 4 You're all set verification summary" loading="lazy">
+        <div class="guide-caption">
+          <span class="fig-tag">Figure 1.8</span>
+          <span>Setup Wizard — Step 4: "You're all set!" Verification Summary (Shop Name, Country, Address, Admin
+            Name)</span>
+        </div>
+        <div class="guide-explain">
+          <div class="ge-head"><svg class="ge-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+            </svg>How to read &amp; use this screen</div>
+          <p class="ge-para">Step 4 of 4 — “You're all set! Review your details before launching.” The summary lists
+            Shop Name (Real Supermarket), Country (Uganda), Phone, Address (Nansana, Kyebando), Admin Name and username
+            at 100% complete. Nothing is written to the workspace until you approve this page.</p>
+          <ol class="ge-steps">
+            <li>Read every row carefully — this is your last chance to correct anything using Back.</li>
+            <li>Press the launch/finish button to create the offline database and hand over to the activation screen.
+            </li>
+            <li>Write the admin credentials down and store them safely.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MODULE 2: ACTIVATION & LICENSING ================= -->
+  <section class="section" id="module-2"
+    style="background:hsl(220 50% 5%);border-top:1px solid var(--border-soft);border-bottom:1px solid var(--border-soft)">
+    <div class="container">
+      <div class="guide-section-head reveal">
+        <h2 class="title">Hardware-Bound Activation &amp; <span class="grad-text">Air-Gapped Licensing</span></h2>
+        <p class="sub">CM RetailOS uses a secure, cryptographic licensing system tied directly to your computer's
+          motherboard and CPU hardware ID. Works 100% offline with zero cloud dependency.</p>
+      </div>
+
+      <!-- Figure 2.1 -->
+      <div class="guide-figure reveal">
+        <img src="images/24.webp" alt="CM RetailOS Workspace Activation and Device ID" loading="lazy">
+        <div class="guide-caption">
+          <span class="fig-tag">Figure 2.1</span>
+          <span>Workspace Activation — Unique Hardware Device ID Extraction (<code>DEV-7FCE-C62E-8A97-7E31</code>) &amp;
+            Mobile Money Payment Channels</span>
+        </div>
+        <div class="guide-explain">
+          <div class="ge-head"><svg class="ge-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+            </svg>How to read &amp; use this screen</div>
+          <p class="ge-para">The Workspace Activation screen. CM RetailOS has already extracted this computer's unique
+            hardware fingerprint — Device ID <code>DEV-7FCE-C62E-8A97-7E31</code> — and lists the OFFICIAL PAYMENT LINES
+            (MTN &amp; Airtel Mobile Money, account name Christopher Muheki). The two badges explain the design:
+            <em>Offline verification</em> and <em>Bound to this device</em>.
+          </p>
+          <ol class="ge-steps">
+            <li>Click the copy button next to the Device ID to copy it exactly.</li>
+            <li>Pay the licence fee via MTN MoMo or Airtel Money to the official lines shown.</li>
+            <li>WhatsApp your Device ID plus the payment reference to the vendor.</li>
+            <li>When your activation key arrives, paste it into the <code>XXXX-XXXX-XXXX-XXXX</code> field with the
+              Paste button and activate.</li>
+          </ol>
+          <div class="ge-warn">⚠️ <strong>Watch out:</strong> Licence keys are cryptographically bound to the Device ID
+            that requested them. A key bought for another computer will be rejected here — always copy the ID from this
+            exact screen.</div>
+        </div>
+      </div>
+
+      <!-- Figure 2.2 & 2.3 -->
+      <div class="step-subgrid" style="margin-top:24px">
+        <div class="guide-figure reveal" style="margin:0">
+          <img src="images/25.webp" alt="License Key Validated" loading="lazy">
+          <div class="guide-caption">
+            <span class="fig-tag">Figure 2.2</span>
+            <span>Activation Key Validated (<code>1C00-0JRX-9Q5J-CXDT</code>)</span>
+          </div>
+          <div class="guide-explain">
+            <div class="ge-head"><svg class="ge-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+              </svg>How to read &amp; use this screen</div>
+            <p class="ge-para">The same screen after pasting a purchased key, <code>1C00-0JRX-9Q5J-CXDT</code>. The
+              notice “New key: 1-month license – Starts when activated” tells you the countdown begins only when
+              activation succeeds, not when you buy the key.</p>
+            <ol class="ge-steps">
+              <li>Paste the 16-character key exactly as received — four groups of four characters.</li>
+              <li>Press Activate; verification happens locally on the machine, no internet needed.</li>
+              <li>On success the workspace unlocks and the 30-day period starts.</li>
+            </ol>
+            <div class="ge-tip">💡 <strong>Pro tip:</strong> Activate on the morning of a busy trading day so your first
+              licensed day covers a full day of sales.</div>
+          </div>
+        </div>
+        <div class="guide-figure reveal" style="margin:0">
+          <img src="images/31.webp" alt="Settings Activation Status 30 Days Remaining" loading="lazy">
+          <div class="guide-caption">
+            <span class="fig-tag">Figure 2.3</span>
+            <span>Settings > Activation: Active Workspace (30 Days Remaining)</span>
+          </div>
+          <div class="guide-explain">
+            <div class="ge-head"><svg class="ge-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+              </svg>How to read &amp; use this screen</div>
+            <p class="ge-para">Settings → Activation, the in-app home of your licence. It repeats your Device ID, shows
+              the activation key field, the remaining-days gauge (about 30 days on a fresh 1-month licence, grace period
+              noted) and the same official Mobile Money payment lines for renewals.</p>
+            <ol class="ge-steps">
+              <li>Open Settings → Activation once a week and glance at the days remaining.</li>
+              <li>Renew 2–3 days before expiry using the same Device ID flow so trading is never interrupted.</li>
+              <li>After pasting a renewal key the countdown resets immediately.</li>
+            </ol>
+            <div class="ge-warn">⚠️ <strong>Watch out:</strong> When the licence lapses the workspace locks back to the
+              activation screen — sales cannot be rung up until a valid key is entered, so never leave renewal to the
+              last minute.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MODULE 3: AUTHENTICATION & ROLES ================= -->
+  <section class="section" id="module-3">
+    <div class="container">
+      <div class="guide-section-head reveal">
+        <h2 class="title">Workspace Authentication &amp; <span class="grad-text">Multi-Role Sign-In</span></h2>
+        <p class="sub">Role-Based Access Control (RBAC) ensures cashiers are locked strictly to checkout counters while
+          administrators access financial profit ledgers.</p>
+      </div>
+
+      <!-- Figure 3.1 & 3.2 -->
+      <div class="step-subgrid">
+        <div class="guide-figure reveal" style="margin:0">
+          <img src="images/6.webp" alt="Sign In Screen" loading="lazy">
+          <div class="guide-caption">
+            <span class="fig-tag">Figure 3.1</span>
+            <span>Sign-In Gateway — Fast Role Switcher Tabs (Admin / Manager / Cashier)</span>
+          </div>
+          <div class="guide-explain">
+            <div class="ge-head"><svg class="ge-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+              </svg>How to read &amp; use this screen</div>
+            <p class="ge-para">The sign-in gateway — “Welcome back to your workspace.” One window serves the whole team:
+              role tabs (Admin / Manager / Cashier) sit above the Username and Password fields. The role you pick
+              decides which menus and figures you will see after signing in.</p>
+            <ol class="ge-steps">
+              <li>Tap the tab that matches your role.</li>
+              <li>Enter your username and password exactly as created by the administrator.</li>
+              <li>Press Sign In — admins land on the full dashboard, cashiers on the locked terminal.</li>
+            </ol>
+          </div>
+        </div>
+        <div class="guide-figure reveal" style="margin:0">
+          <img src="images/35.webp" alt="Authentication Failure Account Not Found" loading="lazy">
+          <div class="guide-caption">
+            <span class="fig-tag">Figure 3.2</span>
+            <span>Authentication Guard — Red "Account not found" Rejection Banner on the Manager Tab</span>
+          </div>
+          <div class="guide-explain">
+            <div class="ge-head"><svg class="ge-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+              </svg>How to read &amp; use this screen</div>
+            <p class="ge-para">The authentication guard in action: a red “Account not found” banner appears because the
+              entered username does not exist under the selected role (Manager in this capture). Nothing unlocks and the
+              failed attempt is never silently ignored.</p>
+            <ol class="ge-steps">
+              <li>First check you are on the correct role tab — an admin username typed under Manager will fail.</li>
+              <li>Re-type the username watching for caps-lock and extra spaces.</li>
+              <li>If it still fails, ask the administrator to confirm your account is active in Settings → Users &amp;
+                Staff.</li>
+            </ol>
+            <div class="ge-tip">💡 <strong>Pro tip:</strong> Repeated failures are logged. If a cashier keeps locking
+              themselves out, reset their PIN rather than sharing yours.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Figure 3.3 & 3.4 -->
+      <div class="step-subgrid" style="margin-top:24px">
+        <div class="guide-figure reveal" style="margin:0">
+          <img src="images/36.webp" alt="Cashier Sign In Screen" loading="lazy">
+          <div class="guide-caption">
+            <span class="fig-tag">Figure 3.3</span>
+            <span>Cashier Sign-In Mode (Dedicated POS Gateway)</span>
+          </div>
+          <div class="guide-explain">
+            <div class="ge-head"><svg class="ge-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+              </svg>How to read &amp; use this screen</div>
+            <p class="ge-para">The hardened sign-in variant branded “Secure access to your workspace” with the Admin /
+              Manager / Cashier tabs. Cashiers use this gateway daily; their accounts are deliberately limited to the
+              checkout lane.</p>
+            <ol class="ge-steps">
+              <li>The cashier selects the Cashier tab and signs in with their own username and PIN.</li>
+              <li>On success only the Cashier Terminal opens — no profit screens, no settings.</li>
+              <li>At shift end, use the profile menu to Switch Account so the next cashier signs in as themselves.</li>
+            </ol>
+          </div>
+        </div>
+        <div class="guide-figure reveal" style="margin:0">
+          <img src="images/34.webp" alt="Top Navigation Profile Menu" loading="lazy">
+          <div class="guide-caption">
+            <span class="fig-tag">Figure 3.4</span>
+            <span>Header Profile Menu (Active User: Christopher Muheki, Admin)</span>
+          </div>
+          <div class="guide-explain">
+            <div class="ge-head"><svg class="ge-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+              </svg>How to read &amp; use this screen</div>
+            <p class="ge-para">The header profile menu opened for Christopher Muheki (Administrator). It confirms who is
+              currently signed in and their role, and offers Settings plus Switch Account without closing the app.</p>
+            <ol class="ge-steps">
+              <li>Click your name at the top-right any time to verify the active user.</li>
+              <li>Use Switch Account to hand the counter to another staff member cleanly.</li>
+              <li>Admins can jump straight into Settings from this menu.</li>
+            </ol>
+            <div class="ge-warn">⚠️ <strong>Watch out:</strong> Never walk away from an unlocked admin session — switch
+              account or sign out before leaving the desk.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MODULE 4: DASHBOARD TELEMETRY ================= -->
+  <section class="section" id="module-4"
+    style="background:hsl(220 50% 5%);border-top:1px solid var(--border-soft);border-bottom:1px solid var(--border-soft)">
+    <div class="container">
+      <div class="guide-section-head reveal">
+        <h2 class="title">Executive Dashboard &amp; <span class="grad-text">Operational Telemetry</span></h2>
+        <p class="sub">Monitor real-time sales revenue, estimated net profit, orders volume, inventory valuation, hourly
+          traffic curves, and automated stockout alerts.</p>
+      </div>
+
+      <!-- Figure 4.1 & 4.2 -->
+      <div class="step-subgrid">
+        <div class="guide-figure reveal" style="margin:0">
+          <img src="images/7.webp" alt="Dashboard Zero State" loading="lazy">
+          <div class="guide-caption">
+            <span class="fig-tag">Figure 4.1</span>
+            <span>Dashboard Zero-State Baseline for "My Duuka"</span>
+          </div>
+          <div class="guide-explain">
+            <div class="ge-head"><svg class="ge-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+              </svg>How to read &amp; use this screen</div>
+            <p class="ge-para">The executive dashboard on day one for “My Duuka”: Today's Revenue USh 0, Today's Profit
+              USh 0, Orders Today 0, Total Inventory Value USh 0, an empty 7am–11pm Sales Overview curve and an empty
+              Top Selling Products list. This is the zero-state baseline before the first sale is rung up.</p>
+            <ol class="ge-steps">
+              <li>Read the four KPI cards as your daily health check.</li>
+              <li>Understand that every number is live — each completed POS sale updates revenue, profit and orders
+                instantly.</li>
+              <li>Once data exists, use the Daily / Weekly / Monthly tabs to change the chart window.</li>
+            </ol>
+          </div>
+        </div>
+        <div class="guide-figure reveal" style="margin:0">
+          <img src="images/8.webp" alt="Dashboard Sidebar Navigation" loading="lazy">
+          <div class="guide-caption">
+            <span class="fig-tag">Figure 4.2</span>
+            <span>Left Sidebar Navigation (Sales, Analytics, Inventory, System)</span>
+          </div>
+          <div class="guide-explain">
+            <div class="ge-head"><svg class="ge-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+              </svg>How to read &amp; use this screen</div>
+            <p class="ge-para">The dashboard annotated by its left sidebar — the map of the whole application: SALES
+              (Point of Sale, Sales History, Receipts), ANALYTICS (Profit Analytics, Business Intelligence), INVENTORY
+              (Products, Stock Levels) and SYSTEM (Audit Logs, Settings). The header carries the live date and clock
+              (SEP 06, 2026 12:52 am) plus an Online status badge.</p>
+            <ol class="ge-steps">
+              <li>Memorise the four groups — every task in this manual lives under one of them.</li>
+              <li>Click any item to switch modules instantly; the active item is highlighted.</li>
+              <li>Use the header clock for shift awareness and the badge to confirm workspace status.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <!-- Figure 4.3 -->
+      <div class="guide-figure reveal" style="margin-top:24px">
+        <img src="images/13.webp" alt="Live Operational Dashboard Light Mode" loading="lazy">
+        <div class="guide-caption">
+          <span class="fig-tag">Figure 4.3</span>
+          <span>Live Dashboard Telemetry (Light Mode) — UGX 11.1M Daily Revenue, UGX 3.19M Profit, 33 Orders &amp; Top
+            SKUs Leaderboard</span>
+        </div>
+        <div class="guide-explain">
+          <div class="ge-head"><svg class="ge-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+            </svg>How to read &amp; use this screen</div>
+          <p class="ge-para">A live trading day in Light Mode: UGX 11,105,000 revenue, UGX 3,196,200 profit, 33 orders —
+            each with “vs yesterday” percentages — a hoverable hourly curve (the tooltip reads Sales UGX 16,201,000 /
+            Profit UGX 4,863,700 at 1pm), Total Inventory Value UGX 82,300,000 across 90 active items, and the Top
+            Selling Products leaderboard led by USB-C Cable 2M (656 units).</p>
+          <ol class="ge-steps">
+            <li>Start each morning here: revenue tells you volume, profit tells you quality.</li>
+            <li>Hover any point of the curve to see exact hourly sales and profit.</li>
+            <li>Scroll the Top Selling Products list to decide what to restock first.</li>
+            <li>Flip Daily / Weekly / Monthly to spot trends beyond a single day.</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Figure 4.4 & 4.5 -->
+      <div class="step-subgrid" style="margin-top:24px">
+        <div class="guide-figure reveal" style="margin:0">
+          <img src="images/14.webp" alt="Live Dashboard Dark Mode with Tooltip" loading="lazy">
+          <div class="guide-caption">
+            <span class="fig-tag">Figure 4.4</span>
+            <span>Live Dashboard (Dark Mode) — Stock Alerts Panel &amp; 7pm Peak Tooltip</span>
+          </div>
+          <div class="guide-explain">
+            <div class="ge-head"><svg class="ge-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+              </svg>How to read &amp; use this screen</div>
+            <p class="ge-para">The same dashboard in Dark Mode at 6:01 PM, focused on the Stock Alerts panel: Quilted
+              Shoulder Tote (low stock, 2 left), Aviator Sunglasses (out of stock, 0), Denim Jacket Vintage (low, 9) and
+              Fleece Neck Scarf (out) — each with an Adjust shortcut — plus a tooltip marking the 7pm sales peak.</p>
+            <ol class="ge-steps">
+              <li>Open the Stock Alerts panel every morning and after big sales days.</li>
+              <li>Click Adjust beside any alert to jump straight to that product's stock editor.</li>
+              <li>Treat “out of stock” rows as lost revenue — restock or hide them from the POS.</li>
+            </ol>
+            <div class="ge-tip">💡 <strong>Pro tip:</strong> The hourly tooltip (7pm peak here) tells you when to
+              schedule your strongest cashier and when the cash float needs topping up.</div>
+          </div>
+        </div>
+        <div class="guide-figure reveal" style="margin:0">
+          <img src="images/44.webp" alt="Live Dashboard for ug electronics" loading="lazy">
+          <div class="guide-caption">
+            <span class="fig-tag">Figure 4.5</span>
+            <span>Live Dashboard for "ug electronics" (USh 7.58M Revenue, USh 2.32M Profit)</span>
+          </div>
+          <div class="guide-explain">
+            <div class="ge-head"><svg class="ge-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+              </svg>How to read &amp; use this screen</div>
+            <p class="ge-para">The dashboard running a second business, “ug electronics” (USh 7.58M revenue, USh 2.32M
+              profit). Everything — header shop name, currency labels, KPIs and leaderboards — is re-branded per
+              workspace from the details entered in the setup wizard.</p>
+            <ol class="ge-steps">
+              <li>Recognise your own store by the header name before trading each day.</li>
+              <li>Keep one licensed PC per shop: workspaces are bound to both hardware and business identity.</li>
+              <li>Use Settings → Business Information to correct branding details at any time.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <!-- Figure 4.6 -->
+      <div class="guide-figure reveal" style="margin-top:24px">
+        <img src="images/45.webp" alt="System Notifications Panel" loading="lazy">
+        <div class="guide-caption">
+          <span class="fig-tag">Figure 4.6</span>
+          <span>System Notifications Center — Live Stockout Warnings, Inventory Drops &amp; Best Seller Alerts</span>
+        </div>
+        <div class="guide-explain">
+          <div class="ge-head"><svg class="ge-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+            </svg>How to read &amp; use this screen</div>
+          <p class="ge-para">The notifications centre (bell icon, top-right). It collects live operational events —
+            stockout warnings, inventory drops and best-seller alerts — in one feed so you never have to hunt for them.
+          </p>
+          <ol class="ge-steps">
+            <li>Click the bell whenever the badge shows unread items.</li>
+            <li>Work the feed top-down: stockouts first, then low stock, then informational alerts.</li>
+            <li>Use the linked actions to jump to the affected product or report.</li>
+          </ol>
+          <div class="ge-tip">💡 <strong>Pro tip:</strong> Make the notification feed part of your closing routine —
+            five minutes each evening prevents tomorrow's stockouts.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MODULE 5: INVENTORY & ANDROID SCAN ================= -->
+  <section class="section" id="module-5">
+    <div class="container">
+      <div class="guide-section-head reveal">
+        <h2 class="title">Inventory, SKU Management &amp; <span class="grad-text">Android Scanner Bridge</span></h2>
+        <p class="sub">Manage unlimited products, track stock thresholds, calculate automatic profit margins, and
+          transform any Android phone into a high-speed camera scanner.</p>
+      </div>
+
+      <!-- Figure 5.1 & 5.2 -->
+      <div class="step-subgrid">
+        <div class="guide-figure reveal" style="margin:0">
+          <img src="images/18.webp" alt="Create Your First Category" loading="lazy">
+          <div class="guide-caption">
+            <span class="fig-tag">Figure 5.1</span>
+            <span>Category Initialization Prompt ("Create Your First Category")</span>
+          </div>
+          <div class="guide-explain">
+            <div class="ge-head"><svg class="ge-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+              </svg>How to read &amp; use this screen</div>
+            <p class="ge-para">The Products page on a fresh install, blocked by the “Create Your First Category” prompt:
+              “Before you can add products, you must create at least one category to organize and assign your products
+              to.” CM RetailOS insists on categories first because they power the POS tiles, the filters and the
+              profit-by-category charts.</p>
+            <ol class="ge-steps">
+              <li>Click the prompt and create realistic shop aisles — e.g. Beverages, Bakery, Electronics, Fashion.</li>
+              <li>Keep the list short and stable; you can always add more later.</li>
+              <li>Once one category exists, the Add Product button unlocks.</li>
+            </ol>
+          </div>
+        </div>
+        <div class="guide-figure reveal" style="margin:0">
+          <img src="images/9.webp" alt="Add New Product Modal with auto SKU, EAN-13 barcode, margin and units"
+            loading="lazy">
+          <div class="guide-caption">
+            <span class="fig-tag">Figure 5.2</span>
+            <span>Add New Product Modal — Auto SKU, EAN-13 Barcode Scan Field, Cost vs Selling Price with Live MARGIN,
+              Min Stock &amp; Unit Selector (pcs/kg/L/g/ml/pack/box)</span>
+          </div>
+          <div class="guide-explain">
+            <div class="ge-head"><svg class="ge-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+              </svg>How to read &amp; use this screen</div>
+            <p class="ge-para">The Add New Product modal over the products table. Fields shown: Product Name
+              (placeholder “eg. Fresh Orange Juice 1L”), an auto-generated SKU (<code>SKU-991046</code>), Category
+              picker, Barcode “Scan or enter…” with EAN-13 format, Cost Price, Selling Price with an automatic MARGIN
+              readout, Qty, Min Stock and the unit selector (pcs / kg / L / g / ml / pack / box).</p>
+            <ol class="ge-steps">
+              <li>Type the product name exactly as it should print on receipts.</li>
+              <li>Pick its category, then scan the barcode with your laser or Android scanner — or type the EAN-13
+                manually.</li>
+              <li>Enter cost and selling prices; the margin badge instantly shows your profit per unit.</li>
+              <li>Set opening Qty, a Min Stock threshold that will trigger Low Stock alerts, and the correct unit.</li>
+              <li>Save — the product is immediately sellable at the POS.</li>
+            </ol>
+            <div class="ge-tip">💡 <strong>Pro tip:</strong> Set Min Stock to roughly one week of expected sales so the
+              reorder alert arrives while the supplier can still deliver in time.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Figure 5.3 & 5.4 -->
+      <div class="step-subgrid" style="margin-top:24px">
+        <div class="guide-figure reveal" style="margin:0">
+          <img src="images/10.webp" alt="Add Product Image dialog: Browse PC or Take Photo Android USB bridge"
+            loading="lazy">
+          <div class="guide-caption">
+            <span class="fig-tag">Figure 5.3</span>
+            <span>Add Product Image — "Browse PC" File Picker vs "Take Photo (Android)" USB Camera Scanner Bridge</span>
+          </div>
+          <div class="guide-explain">
+            <div class="ge-head"><svg class="ge-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+              </svg>How to read &amp; use this screen</div>
+            <p class="ge-para">The Add Product Image dialog with its two sources: “Browse PC — Select an image from this
+              computer or a connected USB drive” and “Take Photo (Android) — Connect phone via USB with USB Debugging
+              enabled.” The second option turns any Android phone into the shop's camera and barcode scanner.</p>
+            <ol class="ge-steps">
+              <li>For Browse PC: pick any JPG/PNG from the computer or a USB stick.</li>
+              <li>For Android: enable Developer Options → USB debugging on the phone, connect the USB cable, then choose
+                Take Photo (Android).</li>
+              <li>Frame the product or its barcode and capture — the image attaches to the SKU and shows on POS tiles.
+              </li>
+            </ol>
+            <div class="ge-tip">💡 <strong>Pro tip:</strong> The Android bridge means you never need to buy a separate
+              barcode laser — a used smartphone plus a USB cable covers scanning and product photos.</div>
+          </div>
+        </div>
+        <div class="guide-figure reveal" style="margin:0">
+          <img src="images/12.webp" alt="Add Product Image Android Camera Bridge" loading="lazy">
+          <div class="guide-caption">
+            <span class="fig-tag">Figure 5.4</span>
+            <span>Populated Product Rows with Real-Time Stock Badges (In Stock / Low Stock) &amp; Per-Item
+              Actions</span>
+          </div>
+          <div class="guide-explain">
+            <div class="ge-head"><svg class="ge-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+              </svg>How to read &amp; use this screen</div>
+            <p class="ge-para">A populated product list (fashion store example) showing the columns you manage daily —
+              Name, Category and Price, with Quantity rendered as live stock badges such as In Stock and Low Stock — and
+              the search box plus category/stock filters above the table.</p>
+            <ol class="ge-steps">
+              <li>Use the search box or the All Categories / All Stock filters to slice the catalog.</li>
+              <li>Read the badges at a glance: green In Stock, amber Low Stock, red Out of Stock.</li>
+              <li>Open a row's actions to edit price, restock quantity or attach a barcode.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <!-- Figure 5.5 -->
+      <div class="guide-figure reveal" style="margin-top:24px">
+        <img src="images/42.webp" alt="Populated Inventory Table for ug electronics" loading="lazy">
+        <div class="guide-caption">
+          <span class="fig-tag">Figure 5.5</span>
+          <span>Selling Lane Table with Live Stock Counts per SKU — <code>In Stock (20)</code>, <code>Low Stock</code>
+            &amp; <code>Out of Stock</code> Badges Update with Every Sale</span>
+        </div>
+        <div class="guide-explain">
+          <div class="ge-head"><svg class="ge-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+            </svg>How to read &amp; use this screen</div>
+          <p class="ge-para">The selling lane in table mode for “ug electronics”, where every SKU row carries its live
+            stock count — <code>In Stock (20)</code>, <code>In Stock (10)</code>, <code>In Stock (5)</code>… — beside
+            the price and a one-tap add button, with “Scan barcode or search products” at the top.</p>
+          <ol class="ge-steps">
+            <li>Watch stock counts fall in real time as sales post — this is your live shelf.</li>
+            <li>When a count approaches zero, reorder or transfer stock before it hits Out of Stock.</li>
+            <li>Teach cashiers that the scan box accepts a laser scanner, the Android bridge, or typed SKUs.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MODULE 6: POS CASHIER TERMINAL ================= -->
+  <section class="section" id="module-6"
+    style="background:hsl(220 50% 5%);border-top:1px solid var(--border-soft);border-bottom:1px solid var(--border-soft)">
+    <div class="container">
+      <div class="guide-section-head reveal">
+        <h2 class="title">Point of Sale (POS) &amp; <span class="grad-text">Cashier Checkout Lanes</span></h2>
+        <p class="sub">Lightning-fast cashier terminal supporting barcode laser scanning, visual touch tile catalog,
+          cash checkout, and instant thermal receipt printing.</p>
+      </div>
+
+      <!-- Figure 6.1 -->
+      <div class="guide-figure reveal">
+        <img src="images/37.webp" alt="POS Cashier Terminal Empty Cart" loading="lazy">
+        <div class="guide-caption">
+          <span class="fig-tag">Figure 6.1</span>
+          <span>Dedicated Cashier Terminal Session (Locked Mode — Profit &amp; Cost Prices Hidden)</span>
+        </div>
+        <div class="guide-explain">
+          <div class="ge-head"><svg class="ge-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+            </svg>How to read &amp; use this screen</div>
+          <p class="ge-para">The dedicated Cashier Terminal in secure session mode: product lane on the left (Name,
+            Category, Price, Quantity, Action), an empty Cart (0) on the right with Subtotal / Discount / Total at USh
+            0, and a Checkout button. Cost prices and profit figures are deliberately absent — cashiers see selling
+            prices only.</p>
+          <ol class="ge-steps">
+            <li>Find items via the search/scan box or by clicking a row's + button.</li>
+            <li>Each add appears in the cart with quantity and line total.</li>
+            <li>Use the trash icon (or the supervisor-approved flow) to remove mis-scans.</li>
+            <li>When the customer is ready, press Checkout to record the cash sale.</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Figure 6.2 -->
+      <div class="guide-figure reveal" style="margin-top:24px">
+        <img src="images/43.webp" alt="POS Visual Tile Grid with 8 Cart Items" loading="lazy">
+        <div class="guide-caption">
+          <span class="fig-tag">Figure 6.2</span>
+          <span>POS Terminal (Visual Tile Grid Mode) — 8 Active Cart Items (Subtotal: USh 1,140,000)</span>
+        </div>
+        <div class="guide-explain">
+          <div class="ge-head"><svg class="ge-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+            </svg>How to read &amp; use this screen</div>
+          <p class="ge-para">The POS in Visual Tile Grid mode with an active Cart (8): large photo tiles carrying In
+            Stock / Low Stock badges (Out of Stock items are greyed out) on the left, and the cart on the right showing
+            quantity steppers (− 2 +), line totals and a running Subtotal/Total of USh 1,140,000.</p>
+          <ol class="ge-steps">
+            <li>Tap tiles to add items — ideal for touchscreens and fast lanes.</li>
+            <li>Adjust quantities with the − / + steppers in the cart.</li>
+            <li>Watch Low Stock badges while selling so you can warn the customer early.</li>
+            <li>Press Checkout, enter cash tendered, and the receipt prints with exact change calculated.</li>
+          </ol>
+          <div class="ge-tip">💡 <strong>Pro tip:</strong> Out-of-stock tiles are dimmed and unselectable when “Hide Out
+            of Stock” is enabled — the lane always reflects reality.</div>
+        </div>
+      </div>
+
+      <!-- Figure 6.3 -->
+      <div class="guide-figure reveal" style="margin-top:24px">
+        <img src="images/42.webp" alt="POS Table View with Cart Items" loading="lazy">
+        <div class="guide-caption">
+          <span class="fig-tag">Figure 6.3</span>
+          <span>POS Terminal (Table List View Mode) — Compact Name/Category/Price Rows, One-Tap + Add Buttons, Barcode
+            Scan Box &amp; Cart Ready for the First Scan</span>
+        </div>
+        <div class="guide-explain">
+          <div class="ge-head"><svg class="ge-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+            </svg>How to read &amp; use this screen</div>
+          <p class="ge-para">The same terminal switched to Table List View: compact Name / Category / Price /
+            stock-badge rows with + add buttons, the “Scan barcode or search products” box and an empty cart waiting for
+            the first scan. Table mode suits large baskets and rapid high-volume checkout lanes.</p>
+          <ol class="ge-steps">
+            <li>Toggle between tile and table view with the two view buttons beside the Products title.</li>
+            <li>In table mode, scan barcodes rapidly — each beep adds or increments a line.</li>
+            <li>Review the cart, apply authorized discounts if needed, then Checkout.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MODULE 7: PROFIT & BASKET BI ================= -->
+  <section class="section" id="module-7">
+    <div class="container">
+      <div class="guide-section-head reveal">
+        <h2 class="title">Live Profit Analytics &amp; <span class="grad-text">Business Intelligence</span></h2>
+        <p class="sub">Turn raw checkout transactions into actionable financial intelligence: live net profit margins,
+          peak sales hours, and frequently bought together basket combinations.</p>
+      </div>
+
+      <!-- Figure 7.1 -->
+      <div class="guide-figure reveal">
+        <img src="images/15.webp" alt="Profit Analytics Dashboard Dark Mode" loading="lazy">
+        <div class="guide-caption">
+          <span class="fig-tag">Figure 7.1</span>
+          <span>Profit Analytics Dashboard — Real-Time Gross/Net Profit (UGX 3.14M), 28.6% Margin &amp; Category Donut
+            Breakdown</span>
+        </div>
+        <div class="guide-explain">
+          <div class="ge-head"><svg class="ge-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+            </svg>How to read &amp; use this screen</div>
+          <p class="ge-para">Profit Analytics — the owner's money screen: GROSS PROFIT UGX 3,148,200, NET PROFIT
+            (TODAY), PROFIT MARGIN 28.6% and TOTAL REVENUE UGX 11,005,000, each with vs-yesterday deltas, an hourly
+            Profit Trend curve and the Profit by Category donut (Electronics / Hardware / Fashion), plus an Export
+            Report button.</p>
+          <ol class="ge-steps">
+            <li>Check PROFIT MARGIN daily — a falling margin usually means discounts or price errors.</li>
+            <li>Compare gross vs net profit to see what expenses are eating.</li>
+            <li>Hover the trend curve to find your most profitable hours.</li>
+            <li>Use Export Report to send XLSX/CSV to your accountant or to CM SheetViewer.</li>
+          </ol>
+          <div class="ge-warn">⚠️ <strong>Watch out:</strong> This screen is role-restricted. Cashier accounts never see
+            margins or cost prices — keep it that way when assigning permissions.</div>
+        </div>
+      </div>
+
+      <!-- Figure 7.2 -->
+      <div class="guide-figure reveal" style="margin-top:24px">
+        <img src="images/16.webp" alt="Business Intelligence Market Basket Overview" loading="lazy">
+        <div class="guide-caption">
+          <span class="fig-tag">Figure 7.2</span>
+          <span>Business Intelligence Overview — Peak Sales Hours (1-3pm Rush), Most Profitable SKUs &amp; Market Basket
+            Co-Purchase Matrix</span>
+        </div>
+        <div class="guide-explain">
+          <div class="ge-head"><svg class="ge-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+            </svg>How to read &amp; use this screen</div>
+          <p class="ge-para">Business Intelligence Overview: the Peak Sales Hours histogram (a clear 1–3 pm rush), the
+            Most Profitable Products ranking, and the Frequently Bought Together market-basket matrix — e.g. Cordless
+            Drill 20V + Wood Screws 1.5&quot;, Cotton Crewneck Tee + Running Sneakers — with purchase-frequency bars.
+          </p>
+          <ol class="ge-steps">
+            <li>Schedule your strongest staff and fullest float across the peak hours shown.</li>
+            <li>Place frequently-bought-together pairs near each other on shelves to lift basket size.</li>
+            <li>Build weekend bundles or promo prices from the top product pairs.</li>
+            <li>Review monthly — seasonality shifts both peaks and pairings.</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Figure 7.3 -->
+      <div class="guide-figure reveal" style="margin-top:24px">
+        <img src="images/17.webp" alt="Profit Analytics Light Mode Tooltip" loading="lazy">
+        <div class="guide-caption">
+          <span class="fig-tag">Figure 7.3</span>
+          <span>Profit Analytics (Light Mode) — Category Margin Contribution Tooltip (Hardware: UGX 1.06M)</span>
+        </div>
+        <div class="guide-explain">
+          <div class="ge-head"><svg class="ge-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+            </svg>How to read &amp; use this screen</div>
+          <p class="ge-para">Profit Analytics in Light Mode with a category tooltip open: hovering the donut reveals
+            Hardware's exact contribution, UGX 1,060,200. The same data as Figure 7.1, rendered for bright rooms and
+            printed reports.</p>
+          <ol class="ge-steps">
+            <li>Hover each donut segment to read exact profit per category.</li>
+            <li>Rank categories by contribution, not just revenue — a quiet category with a fat margin deserves shelf
+              space.</li>
+            <li>Switch theme per environment using the appearance controls.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MODULE 8: SETTINGS & BACKUP ================= -->
+  <section class="section" id="module-8"
+    style="background:hsl(220 50% 5%);border-top:1px solid var(--border-soft);border-bottom:1px solid var(--border-soft)">
+    <div class="container">
+      <div class="guide-section-head reveal">
+        <h2 class="title">System Settings, Thermal Printers &amp; <span class="grad-text">Staff RBAC</span></h2>
+        <p class="sub">Customize company profile, thermal receipt templates, POS scanner audio beeps, multi-staff
+          permissions, and 1-click automated database backups.</p>
+      </div>
+
+      <!-- Figure 8.1 & 8.2 -->
+      <div class="step-subgrid">
+        <div class="guide-figure reveal" style="margin:0">
+          <img src="images/19.webp" alt="Settings Business Information" loading="lazy">
+          <div class="guide-caption">
+            <span class="fig-tag">Figure 8.1</span>
+            <span>Settings > Business Information (Store Name, Contact Details &amp; Logo Upload)</span>
+          </div>
+          <div class="guide-explain">
+            <div class="ge-head"><svg class="ge-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+              </svg>How to read &amp; use this screen</div>
+            <p class="ge-para">Settings → Business Information: the Company Profile editor with Business Name (Real
+              Supermarket), Owner Names (Christopher Muheki), Phone (+256759604799), a logo uploader (“This logo will
+              appear on receipts and reports”, recommended 256×256 PNG/JPG) and the location block. The left rail groups
+              all settings into General &amp; Branding, Operations &amp; POS and Security &amp; Access.</p>
+            <ol class="ge-steps">
+              <li>Correct any detail that changed — name, phone, address.</li>
+              <li>Upload a square logo so receipts and reports carry your brand.</li>
+              <li>Press Save Configurations; receipts update from the next sale.</li>
+            </ol>
+          </div>
+        </div>
+        <div class="guide-figure reveal" style="margin:0">
+          <img src="images/41.webp" alt="Settings Receipt Template and Thermal Preview" loading="lazy">
+          <div class="guide-caption">
+            <span class="fig-tag">Figure 8.2</span>
+            <span>Settings > Receipt &amp; Printing (Header/Footer Editor &amp; Live Thermal Preview)</span>
+          </div>
+          <div class="guide-explain">
+            <div class="ge-head"><svg class="ge-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+              </svg>How to read &amp; use this screen</div>
+            <p class="ge-para">Settings → Receipt &amp; Printing with the live thermal preview on the right: Header Text
+              (“Thank you for shopping with us!”) printed beneath the store name, Footer Text (“Goods once sold are not
+              returnable.”), plus Printing Automation toggles — Auto-Print Receipts, Show Store Logo, Show Cashier Name
+              — and Number of Copies. The preview shows a real slip: Receipt #10042 with Matooke 1kg, Fresh Avocado and
+              Tomatoes totalling USh 15,000.</p>
+            <ol class="ge-steps">
+              <li>Edit header/footer text for promos, helplines or return policies — the preview updates as you type.
+              </li>
+              <li>Decide whether the logo and cashier name print on every slip.</li>
+              <li>Set copies: 1 for the customer, 2 if you keep a duplicate.</li>
+              <li>Keep Auto-Print on for speed at busy counters.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <!-- Figure 8.3 & 8.4 -->
+      <div class="step-subgrid" style="margin-top:24px">
+        <div class="guide-figure reveal" style="margin:0">
+          <img src="images/11.webp" alt="Settings Receipt and Printing default printer EPSON TM-T88V configuration"
+            loading="lazy">
+          <div class="guide-caption">
+            <span class="fig-tag">Figure 8.3</span>
+            <span>Settings > Receipt &amp; Printing — Default Printer (EPSON TM-T88V Receipt), Auto-Print Switch, Number
+              of Copies, Show Logo / Cashier Name Toggles</span>
+          </div>
+          <div class="guide-explain">
+            <div class="ge-head"><svg class="ge-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+              </svg>How to read &amp; use this screen</div>
+            <p class="ge-para">The printer side of Receipt &amp; Printing: the Default Printer selector (EPSON TM-T88V
+              Receipt in this capture), the Auto-Print Receipts switch and Number of Copies. This is where thermal
+              hardware is bound to the POS.</p>
+            <ol class="ge-steps">
+              <li>Choose your connected thermal printer from the Default Printer list (USB, Bluetooth serial or COM
+                port).</li>
+              <li>Match the paper width (58mm/80mm) in the printer's own driver.</li>
+              <li>Run a test sale or test print; if nothing prints, check power, paper orientation and the ESC/POS
+                setting.</li>
+              <li>Keep one spare paper roll beside the printer at all times.</li>
+            </ol>
+          </div>
+        </div>
+        <div class="guide-figure reveal" style="margin:0">
+          <img src="images/26.webp" alt="Settings POS Configuration Switches" loading="lazy">
+          <div class="guide-caption">
+            <span class="fig-tag">Figure 8.4</span>
+            <span>Settings > POS Configuration (Auto-Clear Cart, Supervisor PIN Discounts &amp; Beep Sounds)</span>
+          </div>
+          <div class="guide-explain">
+            <div class="ge-head"><svg class="ge-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+              </svg>How to read &amp; use this screen</div>
+            <p class="ge-para">Settings → POS Configuration — the behaviour switches for the checkout lane: Auto-Clear
+              Cart, Require PIN for Discounts (“Ask for supervisor PIN when applying manual discounts”), and the Display
+              &amp; Audio options: Scanner Beep Sound, Show Product Images, Hide Out of Stock.</p>
+            <ol class="ge-steps">
+              <li>Keep Require PIN for Discounts ON so only supervisors can cut prices.</li>
+              <li>Keep Scanner Beep ON — the audible beep is your theft check that every scan registered.</li>
+              <li>Enable Hide Out of Stock so cashiers never sell items the shelf cannot fulfil.</li>
+              <li>Show Product Images makes tile mode faster for new cashiers.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <!-- Figure 8.5, 8.6, 8.7 -->
+      <div class="step-subgrid" style="margin-top:24px">
+        <div class="guide-figure reveal" style="margin:0">
+          <img src="images/27.webp" alt="Settings Users and Staff Single Admin" loading="lazy">
+          <div class="guide-caption">
+            <span class="fig-tag">Figure 8.5</span>
+            <span>Users &amp; Staff (1/1 Staff Active - Administrator)</span>
+          </div>
+          <div class="guide-explain">
+            <div class="ge-head"><svg class="ge-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+              </svg>How to read &amp; use this screen</div>
+            <p class="ge-para">Settings → Users &amp; Staff on day one: “ENTERPRISE PLAN – 1/1 STAFF” with a single
+              account, Christopher Muheki (<code>@muheki</code>, Administrator, User ID 1). The staff counter shows
+              seats used versus your plan.</p>
+            <ol class="ge-steps">
+              <li>Review who holds the Administrator role — it should be the owner only.</li>
+              <li>Use Add User to provision cashiers and managers as you hire.</li>
+              <li>Remember: every account created here becomes a sign-in option on the gateway.</li>
+            </ol>
+          </div>
+        </div>
+        <div class="guide-figure reveal" style="margin:0">
+          <img src="images/28.webp" alt="Add New Staff Account Permissions Modal" loading="lazy">
+          <div class="guide-caption">
+            <span class="fig-tag">Figure 8.6</span>
+            <span>Add Staff Account — Granular Security Permissions Matrix</span>
+          </div>
+          <div class="guide-explain">
+            <div class="ge-head"><svg class="ge-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+              </svg>How to read &amp; use this screen</div>
+            <p class="ge-para">The Add New Staff Account modal: Username field, Role dropdown (Cashier, Manager…) and
+              the Granular Permissions matrix — Point of Sale (POS), Business Intelligence, Inventory Management, Sales
+              History, Settings &amp; Configuration — each with a plain-language description.</p>
+            <ol class="ge-steps">
+              <li>Enter a simple username the staff member will remember.</li>
+              <li>Choose the role, then apply least privilege: tick only the permissions the job needs.</li>
+              <li>A cashier typically gets POS only; a manager adds Inventory and Sales History.</li>
+              <li>Save — the new account can sign in immediately with its own PIN.</li>
+            </ol>
+            <div class="ge-warn">⚠️ <strong>Watch out:</strong> Never tick “Settings &amp; Configuration” for cashiers —
+              it exposes backups, staff management and licence controls.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-subgrid" style="margin-top:24px">
+        <div class="guide-figure reveal" style="margin:0">
+          <img src="images/30.webp" alt="Users and Staff directory with Administrator and Cashier active"
+            loading="lazy">
+          <div class="guide-caption">
+            <span class="fig-tag">Figure 8.7</span>
+            <span>Users &amp; Staff Directory — Administrator &amp; Cashier Active (Enterprise Plan 2/1 Staff) with
+              Edit, Suspend &amp; Delete Controls per Account</span>
+          </div>
+          <div class="guide-explain">
+            <div class="ge-head"><svg class="ge-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+              </svg>How to read &amp; use this screen</div>
+            <p class="ge-para">The grown-up staff directory: “ENTERPRISE PLAN – 2/1 STAFF” listing christopher Muheki
+              (Administrator, User ID 1) and cashier (<code>@cashier</code>, User ID 2). Each account card offers edit
+              (pencil), suspend (power) and delete (trash) controls, with an Add User button and user search above.</p>
+            <ol class="ge-steps">
+              <li>Suspend — don't delete — staff who leave temporarily, keeping their sales history intact.</li>
+              <li>Delete only when an account must disappear; past receipts keep their cashier name.</li>
+              <li>Use the edit pencil to change roles or reset PINs after staff turnover.</li>
+            </ol>
+          </div>
+        </div>
+        <div class="guide-figure reveal" style="margin:0">
+          <img src="images/32.webp" alt="Settings Backup and Restore Engine" loading="lazy">
+          <div class="guide-caption">
+            <span class="fig-tag">Figure 8.8</span>
+            <span>Settings > Backup &amp; Restore (Automated Snapshots &amp; 1-Click Restore)</span>
+          </div>
+          <div class="guide-explain">
+            <div class="ge-head"><svg class="ge-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+              </svg>How to read &amp; use this screen</div>
+            <p class="ge-para">Settings → Backup &amp; Restore: Backup Count 3, Database Size 4.00 KB (SQLite),
+              Last/Total backup sizes, and a table of snapshots with DATE, SIZE, TYPE (Manual/Automatic), STATUS
+              (Verified) and a Restore action per row, plus Export Database and Import Data buttons.</p>
+            <ol class="ge-steps">
+              <li>Let Automatic snapshots run — they capture the database after key events.</li>
+              <li>Press Export Database daily and save the file to a USB drive or another computer.</li>
+              <li>To recover: choose a verified row and click Restore, or Import Data from an exported file.</li>
+              <li>After any restore, check the dashboard totals match your last known figures.</li>
+            </ol>
+            <div class="ge-warn">⚠️ <strong>Watch out:</strong> A backup that lives on the same PC as the shop data
+              protects against software faults but not theft or disk death — always keep one copy off the machine.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Figure 8.9 -->
+      <div class="guide-figure reveal" style="margin-top:24px">
+        <img src="images/40.webp" alt="Settings About Product Information" loading="lazy">
+        <div class="guide-caption">
+          <span class="fig-tag">Figure 8.9</span>
+          <span>Settings > About — CM RetailOS v3.0.0 Product Information &amp; Christopher Muheki Developer
+            Profile</span>
+        </div>
+        <div class="guide-explain">
+          <div class="ge-head"><svg class="ge-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+            </svg>How to read &amp; use this screen</div>
+          <p class="ge-para">Settings → About: the product identity page — CM RetailOS “Developed &amp; Powered by CM
+            Studios UG”, VERSION 3.0.0, MARKET “African Businesses”, the About CM RetailOS mission text, and the
+            developer profile of Christopher Muheki (Self-Taught Software Engineer · Founder) with support lines +256
+            759 604799 / +256 761 598636.</p>
+          <ol class="ge-steps">
+            <li>Quote the VERSION number (3.0.0) whenever you contact support.</li>
+            <li>Use the listed phone lines for official licence and support requests.</li>
+            <li>Scroll the left rail to reach Activation, Backup &amp; Restore and the other system tools.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MODULE 9: CM SHEETVIEWER ================= -->
+  <section class="section" id="module-9">
+    <div class="container">
+      <div class="guide-section-head reveal">
+        <h2 class="title">CM SheetViewer v1.0 <span class="grad-text">Standalone Spreadsheet Engine</span></h2>
+        <p class="sub">Bundled companion desktop application. Open, filter, search, calculate sums, and audit exported
+          Excel (.xlsx, .xls) and CSV sales reports with zero dependencies on Microsoft Office.</p>
+      </div>
+
+      <!-- Figure 9.1 -->
+      <div class="guide-figure reveal">
+        <img src="images/38.webp" alt="CM SheetViewer Standalone Spreadsheet Interface" loading="lazy">
+        <div class="guide-caption">
+          <span class="fig-tag">Figure 9.1</span>
+          <span>CM SheetViewer v1.0 — High-Speed Standalone Excel (.xlsx) &amp; CSV Audit Grid Supporting Encrypted
+            <code>.cmxl</code> &amp; <code>.cmp</code> Monthly Ledgers</span>
+        </div>
+        <div class="guide-explain">
+          <div class="ge-head"><svg class="ge-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+            </svg>How to read &amp; use this screen</div>
+          <p class="ge-para">CM SheetViewer v1.0's opening screen — “Open Spreadsheet or PDF Report: Preview merchant
+            exports, inventory catalogs, and financial reports instantly without Microsoft Excel or Acrobat Reader” —
+            with supported formats .XLSX Excel, .CSV Delimited, .PDF Report and .XLSM Macro.</p>
+          <ol class="ge-steps">
+            <li>Export any report from CM RetailOS (Profit Analytics, Sales History, inventory) as XLSX or CSV.</li>
+            <li>Open it here with one click — no Office licence, no internet.</li>
+            <li>Filter by cashier, transaction status, or date; search rows; compute column sums for quick audits.</li>
+            <li>Use it on any Windows PC to review encrypted <code>.cmxl</code> / <code>.cmp</code> ledgers securely.
+            </li>
+          </ol>
+          <div class="ge-tip">💡 <strong>Pro tip:</strong> SheetViewer is perfect for the accountant's laptop: hand over
+            exported files without ever exposing the live POS database.</div>
+        </div>
+      </div>
+
+      <div class="step-box reveal" style="margin-top:24px">
+        <div class="step-badge-num" style="background:transparent;border:none;padding:0">
+          <img src="cmsheetviewer.webp" alt="CM SheetViewer Icon"
+            style="width:48px;height:48px;object-fit:contain;display:block;filter:drop-shadow(0 4px 12px rgba(14,165,233,0.3))">
+        </div>
+        <div class="step-main">
+          <div class="step-head-row">
+            <h3>How to Audit Reports in CM SheetViewer</h3>
+            <span class="step-tag">Companion Desktop Tool</span>
+          </div>
+          <p>Every time you export sales, inventory, profit sheets, or debtor records from CM RetailOS, you can open
+            them instantly in <strong>CM SheetViewer</strong>:</p>
+
+          <div class="step-subgrid">
+            <div class="step-feature-card">
+              <div class="sfc-title">1. Export Reports from RetailOS</div>
+              <p>In CM RetailOS, navigate to <strong>Profit Analytics</strong> or <strong>Sales History</strong> and
+                click <em>Export Report &gt; Excel (.xlsx)</em> or <em>CSV</em>.</p>
+            </div>
+            <div class="step-feature-card">
+              <div class="sfc-title">2. One-Click Inspection in SheetViewer</div>
+              <p>Launch <strong>CM SheetViewer</strong> from your Windows Desktop. Open the exported spreadsheet. The
+                high-speed table viewer renders tens of thousands of rows instantly with zero lag.</p>
+            </div>
+          </div>
+
+          <div class="step-callout" style="margin-top:16px">
+            <strong>Manager Filter &amp; Search Tools:</strong> Filter transactions by Cashier Name, receipt number, or
+            date range. Highlight specific categories, calculate column sums, and export print-ready manager audit
+            summaries.
+          </div>
+
+          <div class="step-callout" style="margin-top:12px;border-color:rgba(14,165,233,0.35)">
+            <strong>🔒 CM RetailOS Exclusive Monthly Reports:</strong> <code>.CMP</code> and <code>.CMXL</code> are encrypted proprietary formats <strong>exported automatically</strong> by CM RetailOS for monthly business reports. They strictly require <strong>Admin credentials</strong> to decrypt and open in CM SheetViewer, guaranteeing that confidential store earnings and ledgers can only be accessed by authorized leadership.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= OPERATIONAL FAQ ================= -->
+  <section class="section" id="faq"
+    style="background:hsl(220 50% 5%);border-top:1px solid var(--border-soft);border-bottom:1px solid var(--border-soft)">
+    <div class="container">
+      <div style="text-align:center;max-width:640px;margin:0 auto 40px">
+        <h2 class="title reveal">Frequently Asked <span class="grad-text">Operations Questions</span></h2>
+        <p class="sub reveal">Quick answers to common daily checkout and management scenarios.</p>
+      </div>
+
+      <div class="faq-wrap">
+        <details class="faq-item reveal" open>
+          <summary>A customer changes their mind about an item after it was scanned. How do I remove it? <span
+              class="plus">+</span></summary>
+          <div class="answer">Click on the line item in the cart and press the <strong>Delete</strong> key or the red
+            trash icon. If your system is configured with <em>Cashier Security Lock</em>, an Admin or Manager must enter
+            their PIN to authorize removing an item from an active cart to prevent theft.</div>
+        </details>
+
+        <details class="faq-item reveal">
+          <summary>What should the cashier do if the thermal receipt printer runs out of paper mid-sale? <span
+              class="plus">+</span></summary>
+          <div class="answer">Don't worry! Complete the transaction normally. Open the printer lid, insert a new 58mm or
+            80mm paper roll (thermal side facing down), close the lid, and click the <strong>Reprint Receipt</strong>
+            button in Receipts History. CM RetailOS will immediately reprint the receipt with all transaction details
+            intact.</div>
+        </details>
+
+        <details class="faq-item reveal">
+          <summary>How do I give a discount to a customer without breaking profit reporting? <span class="plus">+</span>
+          </summary>
+          <div class="answer">Click the <strong>Discount</strong> field in the checkout summary. You can enter either a
+            percentage (e.g. 5%) or a flat amount (e.g. 2,000 UGX). CM RetailOS automatically recalculates the final
+            profit margin on that transaction and notes the discount on the customer's receipt and in the audit log.
+          </div>
+        </details>
+
+        <details class="faq-item reveal">
+          <summary>Can cashiers see our supplier buying prices or our daily profit totals? <span class="plus">+</span>
+          </summary>
+          <div class="answer">No. In Cashier Mode, buying costs and store profit metrics are strictly hidden. Cashiers
+            can only view retail selling prices, quantities, and their individual shift totals.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer id="blog">
+    <div class="container">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <a class="logo" href="index.html#top">
+            <img src="brand-logo.webp" alt="CM RetailOS" class="logo-img">
+            CM RetailOS
+          </a>
+          <p class="foot-desc">Enterprise-grade 100% offline desktop Operating System built to streamline checkout,
+            protect stock, and track profits for retail shops across Africa.</p>
+
+          <div class="socials">
+            <a href="https://wa.me/256759604799" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
+              title="Chat on WhatsApp">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.884 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+              </svg>
+            </a>
+            <a href="https://youtu.be/g7xSnU4vMXM" target="_blank" rel="noopener noreferrer" aria-label="YouTube"
+              title="Watch on YouTube">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+              </svg>
+            </a>
+            <a href="https://www.tiktok.com/@papacm.bts?is_from_webapp=1&amp;sender_device=pc" target="_blank"
+              rel="noopener noreferrer" aria-label="TikTok" title="Follow on TikTok">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M16.6 2h3c.2 1.6 1 3 2.2 3.9.8.6 1.8 1 2.9 1.1v3.2c-1.9-.1-3.7-.7-5.2-1.8v6.8c0 3.9-3.2 7-7.1 7S5.3 19 5.3 15.2c0-3.7 2.9-6.8 6.6-7v3.3c-1.9.2-3.4 1.8-3.4 3.7 0 2 1.7 3.7 3.7 3.7s3.6-1.6 3.6-3.6L16.6 2Z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="foot-col">
+          <h4>Product</h4>
+          <a href="index.html#top">Overview</a>
+          <a href="index.html#features-section">Showcase Gallery</a>
+          <a href="index.html#how-it-works">How It Works</a>
+          <a href="index.html#features-section">Point of Sale &amp; Cart</a>
+          <a href="index.html#features-section">Inventory Intelligence</a>
+          <a href="index.html#faq">Frequently Asked Questions</a>
+        </div>
+        <div class="foot-col">
+          <h4>Guides &amp; Setup</h4>
+          <a href="How to Setup.html">How to Setup</a>
+          <a href="User Guide.html">Comprehensive User Guide</a>
+          <a href="How to Setup.html#step-barcode">Barcode Scanner Setup</a>
+          <a href="How to Setup.html#step-printer">Receipt Printer Setup</a>
+          <a href="User Guide.html">Keyboard &amp; Cashier Guide</a>
+          <a href="User Guide.html">Offline Security &amp; Backups</a>
+        </div>
+        <div class="foot-col">
+          <h4>Retail Verticals</h4>
+          <a href="index.html#top">Supermarkets &amp; Duukas</a>
+          <a href="index.html#top">Phones &amp; Electronics Shops</a>
+          <a href="index.html#top">Pharmacies &amp; Drug Stores</a>
+          <a href="index.html#top">Agro-Vet &amp; Farm Supply</a>
+          <a href="index.html#top">Liquor Stores &amp; Depots</a>
+          <a href="index.html#top">Auto Spare Parts &amp; Hardware</a>
+        </div>
+        <div class="foot-col">
+          <h4>African Coverage</h4>
+          <a href="index.html#top">Uganda (UGX)</a>
+          <a href="index.html#top">Kenya (KES)</a>
+          <a href="index.html#top">Tanzania (TZS)</a>
+          <a href="index.html#top">Rwanda (RWF)</a>
+          <a href="index.html#top">South Sudan (SSP)</a>
+          <a href="index.html#top">DR Congo (USD / CDF)</a>
+          <span class="foot-coverage-text">Including all 54 countries across Africa</span>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <div class="foot-legal">
+          <span>© 2026 CM RetailOS Systems. All rights reserved.</span>
+          <div class="foot-legal-links">
+            <a href="#">Privacy Policy</a>
+            <span class="dot-sep">•</span>
+            <a href="#">Terms of Use</a>
+            <span class="dot-sep">•</span>
+            <a href="#">Offline License</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Sticky header border
+    const header = document.querySelector('header');
+    addEventListener('scroll', () => header.classList.toggle('scrolled', scrollY > 10), { passive: true });
+
+    // Mobile menu
+    const ham = document.getElementById('hamburger'), mm = document.getElementById('mobileMenu');
+    ham.addEventListener('click', () => mm.classList.toggle('open'));
+    mm.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mm.classList.remove('open')));
+
+    // Scroll reveal
+    const io = new IntersectionObserver(es => {
+      es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target) } });
+    }, { threshold: .12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach((el, i) => {
+      el.style.transitionDelay = (i % 4) * 70 + 'ms';
+      io.observe(el);
+    });
+  </script>
+</body>
+
+</html>
