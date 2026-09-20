@@ -1224,30 +1224,54 @@ header.scrolled {
 .marquee {
   overflow: hidden;
   position: relative;
-  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
   pointer-events: none;
   user-select: none;
+  width: 100%;
 }
 
 .marquee-track {
   display: flex;
+  flex-wrap: nowrap;
   align-items: center;
   gap: 22px;
   width: max-content;
-  animation: scrollX 45s linear infinite;
+  width: -webkit-max-content;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  animation: scrollX 32s linear infinite;
+  -webkit-animation: scrollX 32s linear infinite;
   pointer-events: none;
 }
 
 @keyframes scrollX {
-  to {
-    transform: translateX(-50%);
+  0% {
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+    -webkit-transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@-webkit-keyframes scrollX {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-50%, 0, 0);
   }
 }
 
 .vendor-chip {
   display: inline-flex;
   align-items: center;
+  flex-shrink: 0;
   gap: 8px;
   color: hsl(215 25% 82%);
   font-weight: 500;
@@ -2432,11 +2456,6 @@ html.js .reveal.in {
     transition: none
   }
 
-  .marquee-track {
-    animation: none;
-    flex-wrap: wrap
-  }
-
   html {
     scroll-behavior: auto
   }
@@ -2793,6 +2812,8 @@ html.js .reveal.in {
 
   .marquee-track {
     gap: 16px;
+    animation-duration: 24s;
+    -webkit-animation-duration: 24s;
   }
 
   .vendor-chip {
