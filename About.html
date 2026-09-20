@@ -622,6 +622,38 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    // Sticky header border
+    const header = document.querySelector('header');
+    addEventListener('scroll', () => header.classList.toggle('scrolled', scrollY > 10), { passive: true });
+
+    // Mobile menu
+    const ham = document.getElementById('hamburger'), mm = document.getElementById('mobileMenu');
+    if (ham && mm) {
+      ham.addEventListener('click', () => mm.classList.toggle('open'));
+      mm.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mm.classList.remove('open')));
+    }
+
+    // Scroll reveal
+    const io = new IntersectionObserver(es => {
+      es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target) } });
+    }, { threshold: .08, rootMargin: '0px 0px -30px 0px' });
+    document.querySelectorAll('.reveal').forEach((el, i) => {
+      el.style.transitionDelay = (i % 4) * 60 + 'ms';
+      io.observe(el);
+    });
+
+    // Fallback: reveal immediately in case of delay or pre-scroll
+    setTimeout(() => {
+      document.querySelectorAll('.reveal').forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight) {
+          el.classList.add('in');
+        }
+      });
+    }, 150);
+  </script>
 </body>
 
 </html>
