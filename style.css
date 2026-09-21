@@ -5628,6 +5628,162 @@ html.js .reveal.in {
   line-height: 1.5;
 }
 
+/* Regional Deployments Across Africa */
+.regional-deployments-box {
+  margin-top: 44px;
+  padding: 30px 24px;
+  background: hsl(217 38% 11%);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.45);
+}
+
+[data-theme="light"] .regional-deployments-box {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  box-shadow: 0 10px 30px -6px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.regional-title {
+  font-size: 13px;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: 0.9px;
+  color: var(--primary-light);
+  margin-bottom: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+[data-theme="light"] .regional-title {
+  color: #0284c7;
+}
+
+.regional-pills-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.regional-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-soft);
+  color: var(--fg);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.regional-pill:hover {
+  transform: translateY(-2px);
+  border-color: var(--primary);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="light"] .regional-pill {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+  color: #0f172a;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .regional-pill:hover {
+  background: #ffffff;
+  border-color: #0284c7;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.12);
+}
+
+.cc-badge {
+  font-size: 10.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 2px 6px;
+  border-radius: 5px;
+  background: rgba(14, 165, 233, 0.16);
+  color: #38bdf8;
+  line-height: 1.2;
+}
+
+[data-theme="light"] .cc-badge {
+  background: rgba(2, 132, 199, 0.12);
+  color: #0284c7;
+}
+
+.curr-badge {
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+[data-theme="light"] .curr-badge {
+  color: #64748b;
+}
+
+.regional-pill.pill-highlight {
+  background: rgba(6, 182, 212, 0.14);
+  color: var(--primary-light);
+  border: 1px solid rgba(6, 182, 212, 0.35);
+  font-weight: 700;
+}
+
+.regional-pill.pill-highlight:hover {
+  background: rgba(6, 182, 212, 0.22);
+  border-color: var(--primary);
+}
+
+[data-theme="light"] .regional-pill.pill-highlight {
+  background: rgba(2, 132, 199, 0.09);
+  color: #0284c7;
+  border-color: rgba(2, 132, 199, 0.32);
+}
+
+[data-theme="light"] .regional-pill.pill-highlight:hover {
+  background: rgba(2, 132, 199, 0.16);
+  border-color: #0284c7;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.15);
+}
+
+/* About CTA Banner */
+.about-cta-banner {
+  background: radial-gradient(circle at 50% 50%, hsl(199 89% 48% / 0.12), transparent 70%), hsl(220 50% 4%);
+  border-top: 1px solid var(--border-soft);
+}
+
+[data-theme="light"] .about-cta-banner {
+  background: radial-gradient(circle at 50% 30%, rgba(2, 132, 199, 0.08), transparent 70%), #f8fafc;
+  border-top-color: #e2e8f0;
+}
+
+.about-cta-logo-wrap {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 20px;
+  border-radius: 20px;
+  background: hsl(199 89% 48% / 0.15);
+  border: 1px solid hsl(199 89% 48% / 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+[data-theme="light"] .about-cta-logo-wrap {
+  background: #ffffff;
+  border-color: #cbd5e1;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
 /* ============ LOCAL NARRATIVE INSIGHTS (USER GUIDE SECTION 7.4) ============ */
 .nie-wrapper {
   border-radius: 16px;
