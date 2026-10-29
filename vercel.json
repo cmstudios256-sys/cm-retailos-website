@@ -3,7 +3,7 @@
   "rewrites": [
     {
       "source": "/cm-retail-os-installer.exe",
-      "destination": "/CM-RETAIL-OS-INSTALLER.exe"
+      "destination": "/CM-RETAIL-OS-INSTALLER-v3.0.8.exe"
     }
   ]
 }
