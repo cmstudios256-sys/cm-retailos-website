@@ -5078,13 +5078,7 @@ html.js .reveal.in {
   letter-spacing: 0.5px;
 }
 
-.pulse-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #22c55e;
-  box-shadow: 0 0 8px #22c55e;
-}
+
 
 .narrative-quote-title {
   font-size: 14.5px;
