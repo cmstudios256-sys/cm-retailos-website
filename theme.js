@@ -260,18 +260,8 @@ function initYouTubeHD() {
   }
 }
 
-function initAll() {
+export function initAll() {
   initThemeToggle();
   initWhatsAppModal();
   initYouTubeHD();
 }
-
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initAll);
-} else {
-  initAll();
-}
-
-
-
-
