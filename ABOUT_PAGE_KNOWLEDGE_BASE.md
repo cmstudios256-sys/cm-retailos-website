@@ -8,9 +8,9 @@
 ## 1. Product & Brand Identity
 
 * **Product Name**: CM RetailOS
-* **Current Version**: 3.0.0 (Professional Desktop Retail Operating System)
+* **Current Version**: 3.0.8 (Professional Desktop Retail Operating System)
 * **Parent Studio / Developer**: **CM Studios UG**
-* **Official Website**: `https://cmstudiosug.com`
+* **Official Website**: `https://cmretailos.vercel.app`
 * **Contact Email**: `cmstudios256@gmail.com`
 * **Official Tagline**: *"Built in Africa. Designed for modern business."*
 * **Secondary Brand Tag**: *"Developed & Powered by CM Studios UG"*
@@ -93,7 +93,7 @@ The web agent can showcase these modules on the website:
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │  1. HERO SECTION                                            │
-│     - Brand Logo + "CM RetailOS 3.0" Badge                  │
+│     - Brand Logo + "CM RetailOS 3.0.8" Badge                │
 │     - "Built in Africa. Designed for Modern Business."      │
 ├─────────────────────────────────────────────────────────────┤
 │  2. PRODUCT OVERVIEW & PURPOSE                              │
