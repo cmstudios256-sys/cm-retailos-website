@@ -980,6 +980,21 @@
       io.observe(el);
     });
 
+    // Pointer-follow spotlight for the insights cards
+    if (matchMedia('(hover: hover) and (pointer: fine)').matches) {
+      document.querySelectorAll('.insights-pillar-card, .insight-card').forEach(card => {
+        card.addEventListener('pointermove', event => {
+          const bounds = card.getBoundingClientRect();
+          card.style.setProperty('--spotlight-x', `${event.clientX - bounds.left}px`);
+          card.style.setProperty('--spotlight-y', `${event.clientY - bounds.top}px`);
+        });
+        card.addEventListener('pointerleave', () => {
+          card.style.removeProperty('--spotlight-x');
+          card.style.removeProperty('--spotlight-y');
+        });
+      });
+    }
+
     // ================= SHOWCASE GALLERY ENGINE =================
     (function () {
       const gSection = document.getElementById('features-section');
