@@ -39,6 +39,7 @@ function copyStaticSiteAssets() {
   const staticFiles = [
     'brand-logo.png',
     'brand-logo.webp',
+    'favicon-180.png',
     'CM-RETAIL-OS-INSTALLER-v3.0.8.exe',
     'CM-RetailOS-User-Guide.pdf',
     'CM-SheetViewer-Setup-1.0.1.exe',
