@@ -12,7 +12,7 @@
         <a href="#how-it-works">How It Works</a>
         <a href="How to Setup.html">How to Setup</a>
         <a href="User Guide.html">User Guide</a>
-        <a href="https://cm-retailos-online-preview.onrender.com" target="_blank" rel="noopener noreferrer">Online POS</a>
+        <a data-online-app="open" href="https://cm-retailos-online-preview.onrender.com/">Online POS</a>
         <a href="download.html">Download</a>
         <a href="About.html">About</a>
         <a href="#faq">FAQ</a>
@@ -37,6 +37,7 @@
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
         </button>
+        <a class="btn btn-app" data-online-app="install" href="https://online.cmretailos.com/?install=1">Get Mobile App</a>
         <a class="btn btn-primary" href="download.html">Download</a>
         <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
           <span></span><span></span><span></span>
@@ -48,7 +49,7 @@
       <a href="#how-it-works">How It Works</a>
       <a href="How to Setup.html">How to Setup</a>
       <a href="User Guide.html">User Guide</a>
-      <a href="https://cm-retailos-online-preview.onrender.com" target="_blank" rel="noopener noreferrer">Online POS</a>
+      <a data-online-app="open" href="https://cm-retailos-online-preview.onrender.com/">Online POS</a>
       <a href="download.html">Download</a>
       <a href="About.html">About</a>
       <a href="#faq">FAQ</a>
@@ -79,47 +80,50 @@
 
   <main id="main-content" tabindex="-1">
   <!-- ================= HERO ================= -->
-  <section class="hero">
+  <section class="hero online-priority">
     <div class="hero-bg"></div>
-    <div class="container">
+    <div class="container online-hero-layout">
       <div class="hero-header-group">
-        <h1 class="reveal">Keep your shop moving, <span class="grad-text">even offline.</span></h1>
-        <p class="lead reveal">CM RetailOS brings checkout, stock, receipts and sales reports together on your Windows
-          computer. Built in Kampala for shops and supermarkets that need to keep working when the internet is down.</p>
+        <h1 class="reveal">Your shop,<br>on every screen.</h1>
+        <p class="lead reveal">
+          Sell, track stock, and review sales in CM RetailOS Online — from your laptop, tablet, or phone.
+        </p>
         <div class="hero-actions reveal">
-          <a class="btn btn-primary btn-lg" href="download.html">Download RetailOS</a>
-          <a class="btn btn-ghost btn-lg" href="https://cm-retailos-online-preview.onrender.com" target="_blank" rel="noopener noreferrer">Open Online POS</a>
+          <a class="btn btn-primary btn-lg" data-online-app="open"
+            href="https://cm-retailos-online-preview.onrender.com/">Open Online POS</a>
           <a class="btn btn-ghost btn-lg" href="#video-demo" style="display:inline-flex;align-items:center;gap:7px">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0">
               <path d="M8 5v14l11-7z" />
             </svg>
-            Watch Demo
+            Watch demo
           </a>
         </div>
         <div class="hero-download-details reveal">
-          <p>Works offline after setup. Your sales and stock records stay on this computer.</p>
-          <div class="hero-download-facts">
-            <span>Version 3.0.8</span>
-            <span>Windows 64-bit</span>
-            <span>33.2 MB installer</span>
-          </div>
-          <div class="hero-download-links">
-            <a href="download.html#requirements">Check PC requirements</a>
-            <a href="How to Setup.html">Read the setup guide</a>
-          </div>
+          <p>Need the offline desktop version? <a href="download.html">Get RetailOS for Windows</a>.</p>
         </div>
       </div>
 
-      <div class="hero-visual-group">
-        <!-- Dashboard mock (CM RetailOS 14.webp) -->
-        <div class="dash-wrap reveal">
-          <div class="dash-glow"></div>
-          <div class="dash">
-            <img src="images/14.webp" width="1280" height="720" alt="CM RetailOS Dashboard" loading="eager"
-              fetchpriority="high">
+      <div class="hero-visual-group online-device-gallery" role="group"
+        aria-label="CM RetailOS Online on laptop, tablet, and mobile">
+        <figure class="online-device online-device-laptop">
+          <img src="images/online-laptop.png" width="960" height="768" alt="CM RetailOS running on a laptop"
+            loading="eager" fetchpriority="high">
+          <figcaption>Laptop</figcaption>
+        </figure>
+        <figure class="online-device online-device-tablet">
+          <img src="images/online-tablet.png" width="960" height="768" alt="CM RetailOS running on an iPad"
+            loading="lazy">
+          <figcaption>Tablet</figcaption>
+        </figure>
+        <figure class="online-device online-device-phone">
+          <div class="online-phone-pair">
+            <img class="online-phone-dark" src="images/online-phone-dark.png" width="768" height="768"
+              alt="CM RetailOS on an iPhone in dark mode" loading="lazy">
+            <img class="online-phone-light" src="images/online-phone-light.png" width="768" height="768"
+              alt="CM RetailOS on an iPhone in light mode" loading="lazy">
           </div>
-        </div>
-        <p class="hero-caption">Example dashboard. Your figures reflect your shop's records.</p>
+          <figcaption>Mobile</figcaption>
+        </figure>
       </div>
     </div>
   </section>

@@ -260,8 +260,62 @@ function initYouTubeHD() {
   }
 }
 
+function initOnlineAppLinks() {
+  const isLocal = typeof window !== 'undefined' && (
+    window.location.hostname === 'localhost' ||
+    window.location.hostname === '127.0.0.1' ||
+    window.location.hostname.startsWith('192.168.') ||
+    window.location.hostname.startsWith('10.') ||
+    window.location.hostname.startsWith('172.')
+  );
+  const base = isLocal
+    ? `http://${window.location.hostname}:5180`
+    : 'https://cm-retailos-online-preview.onrender.com';
+
+  document.querySelectorAll('a[data-online-app]').forEach(link => {
+    const mode = link.getAttribute('data-online-app');
+    const targetUrl = mode === 'install' ? `${base}/?install=1` : `${base}/`;
+    link.setAttribute('href', targetUrl);
+  });
+
+  const openLinks = document.querySelectorAll('a[data-online-app="open"]');
+  if (openLinks.length) {
+    const dialog = document.createElement('dialog');
+    dialog.className = 'online-coming-soon-dialog';
+    dialog.setAttribute('aria-labelledby', 'onlineComingSoonTitle');
+    dialog.setAttribute('aria-describedby', 'onlineComingSoonDescription');
+    dialog.innerHTML = `
+      <h2 id="onlineComingSoonTitle">Desktop &amp; tablet coming soon</h2>
+      <p id="onlineComingSoonDescription">The desktop and tablet versions of CM RetailOS Online are still in development. For now, the ready-to-use version is available on mobile.</p>
+      <button class="btn btn-primary" type="button">Got it</button>
+    `;
+    document.body.appendChild(dialog);
+
+    dialog.querySelector('button').addEventListener('click', () => dialog.close());
+    dialog.addEventListener('click', event => {
+      if (event.target === dialog) dialog.close();
+    });
+
+    openLinks.forEach(link => {
+      link.addEventListener('click', event => {
+        if (!window.matchMedia('(max-width: 768px)').matches) {
+          event.preventDefault();
+          dialog.showModal();
+        }
+      });
+    });
+  }
+
+  const qr = document.getElementById('pwaQrImage');
+  if (qr) {
+    const qrTarget = encodeURIComponent(`${base}/?install=1`);
+    qr.setAttribute('src', `https://api.qrserver.com/v1/create-qr-code/?size=336x336&margin=0&data=${qrTarget}`);
+  }
+}
+
 export function initAll() {
   initThemeToggle();
   initWhatsAppModal();
   initYouTubeHD();
+  initOnlineAppLinks();
 }
