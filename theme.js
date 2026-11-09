@@ -270,7 +270,7 @@ function initOnlineAppLinks() {
   );
   const base = isLocal
     ? `http://${window.location.hostname}:5180`
-    : 'https://cm-retailos-online-preview.onrender.com';
+    : 'https://cm-retailos-online.onrender.com';
 
   document.querySelectorAll('a[data-online-app]').forEach(link => {
     const mode = link.getAttribute('data-online-app');
