@@ -1,7 +1,7 @@
 # CM RetailOS — Comprehensive Project Master Report
 
 > **Document Type**: Comprehensive System Architecture, Product Specification & Technical Dossier  
-> **Product**: CM RetailOS (Version 3.0.8)
+> **Product**: CM RetailOS (Version 3.0.9)
 > **Companion Software**: CM SheetViewer (Version 1.0.1)
 > **Company**: CM Studios UG (Kampala, Uganda)  
 > **Founder & Lead Architect**: Christopher Muheki  
@@ -254,7 +254,7 @@ The CM RetailOS web platform is a modern, static web application hosted on Verce
 | :--- | :--- |
 | **`index.html`** | Primary storefront, hero, interactive showcase gallery engine, core feature breakdowns, Local Narrative Insights Engine deep dive, African commercial sectors, 54-country coverage, FAQ, and footer. |
 | **`About.html`** | Origin story, Challenge vs. Solution matrix, Mission & Vision statements, Founder & Lead Architect profile (Christopher Muheki), 4 Engineering Pillars, and Active Deployments card. |
-| **`download.html`** | Offline binary distribution portal for `CM-RETAIL-OS-INSTALLER-v3.0.8.exe` (34.8 MB) and `CM-SheetViewer-Setup-1.0.1.exe` (8.7 MB), system requirements, and installation checklist. |
+| **`download.html`** | Offline binary distribution portal for `CM-RETAIL-OS-INSTALLER-v3.0.9.exe` (34.8 MB) and `CM-SheetViewer-Setup-1.0.1.exe` (8.7 MB), system requirements, and installation checklist. |
 | **`User Guide.html`** | Comprehensive 15+ section operations manual covering cashier training, keyboard shortcuts, shift balancing, thermal printer setup, database maintenance, and NIE interpreting. |
 | **`How to Setup.html`** | Illustrated hardware setup tutorial for ESC/POS receipt printers, barcode scanners, and air-gapped license activation. |
 | **`sitemap.xml`** | Validated XML index covering all core routes with updated priorities and daily/weekly crawl schedules. |
@@ -371,7 +371,7 @@ c:\Users\cmstu\Desktop\cm retailos website\
 ├── sitemap.xml                      # Production XML sitemap with daily/weekly crawl priorities
 ├── robots.txt                       # Crawler authorization pointing to sitemap.xml
 ├── vercel.json                      # Vercel deployment headers and clean URLs
-├── CM-RETAIL-OS-INSTALLER-v3.0.8.exe # Complete desktop OS Windows installer (34.8 MB)
+├── CM-RETAIL-OS-INSTALLER-v3.0.9.exe # Complete desktop OS Windows installer (34.8 MB)
 ├── CM-SheetViewer-Setup-1.0.1.exe    # Standalone encrypted dossier viewer setup (8.7 MB)
 ├── CM-RetailOS-User-Guide.pdf       # Compiled offline PDF manual (15.0 MB)
 ├── brand-logo.png                   # High-resolution master brand logo (2.4 MB)
