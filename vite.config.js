@@ -1,11 +1,10 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import React from 'react';
-import { renderToString } from 'react-dom/server';
-import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
-import { renderPageContent } from './src/render-page-content.js';
+import vue from '@vitejs/plugin-vue';
+import { createSSRApp, h } from 'vue';
+import { renderToString } from 'vue/server-renderer';
 
 const root = path.dirname(fileURLToPath(import.meta.url));
 const pageTemplates = {
@@ -19,14 +18,20 @@ const pageTemplates = {
 function prerenderPageContent() {
   return {
     name: 'prerender-page-content',
-    transformIndexHtml(html) {
+    async transformIndexHtml(html) {
       const page = html.match(/<div id="root" data-page="([^"]+)"><\/div>/)?.[1];
       const templateName = pageTemplates[page];
       if (!templateName) return html;
 
       const templatePath = path.join(root, 'src', 'pages', templateName);
       const markup = fs.readFileSync(templatePath, 'utf8');
-      const rendered = renderToString(React.createElement(React.Fragment, null, renderPageContent(markup)));
+
+      const app = createSSRApp({
+        render() {
+          return h('div', { class: 'cm-site-root', innerHTML: markup });
+        }
+      });
+      const rendered = await renderToString(app);
       return html.replace(
         `<div id="root" data-page="${page}"></div>`,
         `<div id="root" data-page="${page}">${rendered}</div>`
@@ -64,7 +69,7 @@ function copyStaticSiteAssets() {
 }
 
 export default defineConfig({
-  plugins: [react(), prerenderPageContent(), copyStaticSiteAssets()],
+  plugins: [vue(), prerenderPageContent(), copyStaticSiteAssets()],
   build: {
     rollupOptions: {
       input: {

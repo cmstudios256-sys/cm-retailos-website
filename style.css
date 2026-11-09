@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* ============ TOKENS ============ */
 :root {
   --bg: hsl(218 42% 7%);
